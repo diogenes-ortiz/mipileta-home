@@ -37,7 +37,7 @@
   h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.06;}
   .container{max-width:1180px;margin:0 auto;padding:0 20px;}
   .section{padding-block:clamp(56px,8vw,104px);}
-  #lineas,#marca,#compra,#inspileta,#contacto{scroll-margin-top:84px;}
+  #lineas,#marca,#compra,#inspileta,#donde-comprar,#newsletter,#contacto{scroll-margin-top:84px;}
 
   /* ---------- helpers ---------- */
   .eyebrow{
@@ -76,7 +76,7 @@
   .topbar{position:sticky;top:0;z-index:60;background:var(--nav);padding:11px 0;}
   .topbar .inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;position:relative;}
   .topbar .logo{height:42px;width:auto;}
-  .topbar nav{display:flex;gap:2rem;align-items:center;}
+  .topbar nav{display:flex;gap:1.7rem;align-items:center;}
   .topbar nav a{font-size:.98rem;font-weight:300;opacity:.88;transition:opacity .2s;}
   .topbar nav a:hover{opacity:1;}
   .nav-shop{
@@ -89,7 +89,7 @@
     background:none;border:0;cursor:pointer;padding:8px;width:44px;height:44px;}
   .hamburger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;
     transition:transform .3s ease,opacity .3s ease;}
-  @media(max-width:900px){
+  @media(max-width:1060px){
     .topbar .logo{height:36px;}
     .hamburger{display:flex;}
     .topbar nav{
@@ -248,6 +248,28 @@
     .linea--wide .linea-body{padding:24px 26px 28px;}
   }
 
+  /* ---------- categorias que no son "linea" pero tienen que estar ---------- */
+  /* van despues de las lineas y en un peso visual menor a proposito:
+     lavadero, piletones y repuestos no compiten con Essentia y Zingara */
+  .extras-head{display:flex;align-items:center;gap:18px;margin:46px 0 18px;}
+  .extras-head::before,.extras-head::after{content:"";flex:1;height:1px;background:var(--line);}
+  .extras-head span{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#8b9198;}
+  .extras{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .extra{
+    display:flex;gap:16px;align-items:stretch;
+    background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 24px;
+    transition:border-color .35s ease,transform .5s cubic-bezier(.22,.61,.36,1);
+  }
+  .extra:hover{border-color:#454545;transform:translateY(-3px);}
+  .extra svg{flex:0 0 auto;align-self:flex-start;width:26px;height:26px;stroke:#c8ced6;fill:none;stroke-width:1.2;margin-top:3px;}
+  /* la columna de texto crece para que los "Ver…" queden alineados aunque las
+     descripciones tengan distinta cantidad de renglones */
+  .extra > div{display:flex;flex-direction:column;flex:1;}
+  .extra b{display:block;font-size:1rem;font-weight:700;}
+  .extra p{margin:5px 0 0;color:var(--muted);font-size:.87rem;font-weight:300;}
+  .extra .linea-go{margin-top:auto;padding-top:16px;font-size:.78rem;align-self:flex-start;}
+  @media(max-width:860px){.extras{grid-template-columns:1fr;}}
+
   /* ---------- franja clara: la marca ---------- */
   /* el quiebre a claro es exclusivo de la home; las landings de línea son 100% negras */
   .paper{background:var(--paper);color:var(--ink);}
@@ -297,6 +319,90 @@
   .post-body span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);}
   .post-body h3{font-size:1.05rem;font-weight:400;line-height:1.35;margin-top:10px;}
   @media(max-width:900px){.posts{grid-template-columns:1fr;}}
+
+  /* ---------- donde comprar (portado de la landing de Essentia) ---------- */
+  .locator{
+    margin-top:40px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:0;
+    border-radius:22px;overflow:hidden;
+    background:rgba(20,20,22,.72);border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  .loc-side{padding:34px 30px;display:flex;flex-direction:column;}
+  .loc-title{font-size:1.6rem;font-weight:400;margin:0 0 8px;}
+  .loc-sub{color:var(--muted);font-weight:300;margin:0 0 20px;font-size:.95rem;}
+  .loc-form{display:flex;gap:10px;margin-bottom:18px;}
+  .loc-form input{
+    flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:10px;color:#fff;padding:12px 16px;font-family:inherit;font-size:.95rem;outline:none;
+  }
+  .loc-form input::placeholder{color:#888;}
+  .loc-form input:focus{border-color:rgba(255,255,255,.4);}
+  .loc-go{padding:12px 22px;font-size:.9rem;}
+  .loc-results{overflow-y:auto;max-height:330px;padding-right:6px;}
+  .loc-hint,.loc-none{color:#7e7e7e;font-weight:300;font-size:.9rem;margin:0;}
+  .loc-zone{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#c4cad1;margin:4px 0 10px;}
+  .loc-card{border-top:1px solid rgba(255,255,255,.08);padding:14px 0;}
+  .loc-card.cerca h4::after{
+    content:"El más cercano";margin-left:10px;font-size:.62rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--warm);font-weight:400;vertical-align:middle;
+  }
+  .loc-card h4{font-size:1rem;font-weight:700;margin:0 0 4px;}
+  .loc-card p{margin:0;color:var(--muted);font-weight:300;font-size:.85rem;line-height:1.4;}
+  .loc-card a{color:#cfcfcf;font-size:.85rem;text-decoration:underline;}
+  .loc-map{position:relative;min-height:460px;background:radial-gradient(circle at 35% 25%,#19191c,#0a0a0b 75%);overflow:hidden;}
+  .loc-streets{position:absolute;inset:0;width:100%;height:100%;}
+  .loc-map-empty{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:#4f4f4f;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  }
+  .loc-pins{position:absolute;inset:0;}
+  .loc-pin{
+    position:absolute;transform:translate(-50%,-100%);
+    width:24px;height:24px;border-radius:50% 50% 50% 0;rotate:-45deg;
+    background:linear-gradient(135deg,#eef1f4,#aab2bb 55%,#7c848e);
+    box-shadow:0 6px 16px rgba(0,0,0,.55);animation:pin-drop .4s ease both;
+  }
+  .loc-pin.cerca{background:linear-gradient(135deg,#f3d9bd,#c9925a 60%,#8d5f33);width:28px;height:28px;}
+  .loc-pin::after{content:"";position:absolute;inset:7px;background:#0a0a0b;border-radius:50%;}
+  @keyframes pin-drop{from{opacity:0;transform:translate(-50%,-160%);}to{opacity:1;transform:translate(-50%,-100%);}}
+  @media(max-width:820px){
+    .locator{grid-template-columns:1fr;}
+    .loc-side{padding:26px 22px;}
+    .loc-title{font-size:1.4rem;}
+    .loc-form{flex-direction:column;}
+    .loc-go{width:100%;}
+    .loc-map{min-height:340px;}
+  }
+
+  /* ---------- newsletter ---------- */
+  .news{
+    border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
+    padding:clamp(34px,5vw,58px) clamp(24px,5vw,58px);
+  }
+  .news h2{font-family:"Raleway",sans-serif;font-weight:200;
+    font-size:clamp(1.7rem,3.2vw,2.5rem);margin:14px 0 0;}
+  .news .lead{margin:16px 0 0;max-width:62ch;}
+  .news-form{margin-top:28px;}
+  .news-perfiles{display:flex;flex-wrap:wrap;gap:10px;}
+  /* el radio real queda oculto pero navegable por teclado: el foco se ve en el chip */
+  .perfil input{position:absolute;opacity:0;width:0;height:0;}
+  .perfil span{
+    display:inline-block;cursor:pointer;
+    border:1px solid var(--line);border-radius:99px;padding:9px 18px;
+    font-size:.85rem;color:#c8ced6;transition:background .25s,border-color .25s,color .25s;
+  }
+  .perfil span:hover{border-color:#5a5a5a;color:#fff;}
+  .perfil input:checked + span{background:#fff;border-color:#fff;color:var(--ink);font-weight:700;}
+  .perfil input:focus-visible + span{outline:2px solid var(--warm);outline-offset:2px;}
+  .news-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
+  .news-row input{
+    flex:1;min-width:240px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:99px;color:#fff;padding:14px 22px;font-family:inherit;font-size:.95rem;outline:none;
+  }
+  .news-row input::placeholder{color:#888;}
+  .news-row input:focus{border-color:rgba(255,255,255,.4);}
+  .news-msg{margin:14px 0 0;font-size:.9rem;color:var(--warm);min-height:1.2em;}
 
   /* ---------- contacto ---------- */
   .contacto{
@@ -407,8 +513,9 @@
       <a href="#marca">La marca</a>
       <a href="#compra">Compra protegida</a>
       <a href="#inspileta">Inspileta</a>
+      <a href="#donde-comprar">Dónde comprar</a>
       <a href="#contacto">Contacto</a>
-      <a class="nav-shop" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Tienda online</a>
+      <a class="nav-shop" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Catálogo online</a>
     </nav>
   </div>
 </header>
@@ -429,7 +536,7 @@
       Diseño y fabricación argentina, con 10 años de garantía.</p>
     <div class="cta-row">
       <a class="btn btn-metal" href="#lineas">Conocé las líneas</a>
-      <a class="btn btn-outline" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Tienda online</a>
+      <a class="btn btn-outline" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Catálogo online</a>
     </div>
   </div>
   <div class="scroll-hint"></div>
@@ -521,6 +628,34 @@
         </div>
       </a>
     </div>
+
+    <div class="extras-head rv"><span>También hacemos</span></div>
+    <div class="extras">
+      <a class="extra rv" href="https://mipileta.com.ar/search?q=lavadero" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M4 10h16v6a4 4 0 01-4 4H8a4 4 0 01-4-4z"/><path d="M8 10V6.5A2.5 2.5 0 0113 6"/></svg>
+        <div>
+          <b>Lavadero</b>
+          <p>Piletas de lavadero simples y con escurridor. El mismo acero, para el uso más bravo de la casa.</p>
+          <span class="linea-go">Ver lavaderos <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Piletones" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="8" width="8" height="11" rx="1.6"/><rect x="13" y="8" width="8" height="11" rx="1.6"/><path d="M7 8V5M17 8V5"/></svg>
+        <div>
+          <b>Piletones</b>
+          <p>Para gastronomía, industria y espacios de trabajo, donde la pileta labura todo el día.</p>
+          <span class="linea-go">Ver piletones <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Repuestos" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 3l7.4 4.3v8.4L12 21l-7.4-5.3V7.3z"/><circle cx="12" cy="12" r="3.1"/></svg>
+        <div>
+          <b>Repuestos</b>
+          <p>Sifones, desagües, cestillos y válvulas. Lo que hace que una pileta siga siendo la de siempre.</p>
+          <span class="linea-go">Ver repuestos <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -529,14 +664,14 @@
   <div class="container marca-grid">
     <div class="marca-txt rv">
       <p class="eyebrow">La marca</p>
-      <h2>Todo empieza<br>por el <strong>material</strong></h2>
-      <p>En Mi Pileta trabajamos con acero inoxidable AISI 304 18/8: resistente,
-         higiénico, reciclable y hecho para permanecer en el tiempo.</p>
+      <h2>Todo empieza<br>por la <strong>calidad</strong></h2>
+      <p>Para nosotros la calidad no es una promesa de folleto: es acero inoxidable
+         AISI 304 18/8, resistente, higiénico, reciclable y hecho para permanecer en el tiempo.</p>
       <p>Desarrollamos cada modelo puertas adentro —diseño, matricería y terminación—
          para que lo que llega a tu cocina o a tu baño tenga el mismo estándar que
          le exigimos a nuestra propia casa. Por eso cada pileta sale con 10 años de garantía.</p>
       <div class="cta-row" style="margin-top:26px;">
-        <a class="btn btn-ink" href="https://mipileta.com.ar/pages/nuestra-historia" target="_blank" rel="noopener">Nuestra historia</a>
+        <a class="btn btn-ink" href="https://mipileta.com.ar/pages/nuestra-historia" target="_blank" rel="noopener">Conocer nuestra historia</a>
       </div>
 
       <div class="facts">
@@ -640,6 +775,45 @@
   </div>
 </section>
 
+<!-- ============ DÓNDE COMPRAR ============ -->
+<section class="section" id="donde-comprar" style="padding-top:0;">
+  <div class="container">
+    <div class="center rv">
+      <p class="eyebrow">Dónde comprar</p>
+      <h2 class="title">Tu punto de venta <strong>más cercano</strong></h2>
+    </div>
+
+    <div class="locator rv" id="locator">
+      <div class="loc-side">
+        <h3 class="loc-title">¿Dónde la consigo?</h3>
+        <p class="loc-sub">Escribí tu zona o barrio y te mostramos los distribuidores que la tienen.</p>
+        <form class="loc-form" id="loc-form" autocomplete="off">
+          <input id="loc-q" type="text" placeholder="Ej: Palermo, Belgrano, Caballito…" aria-label="Tu zona o barrio">
+          <button type="submit" class="btn btn-metal loc-go">Buscar</button>
+        </form>
+        <div class="loc-results" id="loc-results">
+          <p class="loc-hint">Escribí tu zona para ver los puntos de venta más cercanos.</p>
+        </div>
+      </div>
+      <div class="loc-map" id="loc-map">
+        <svg class="loc-streets" viewBox="0 0 600 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="520" fill="none"/>
+          <g stroke="#2a2a2a" stroke-width="2" fill="none">
+            <path d="M0 90 H600 M0 200 H600 M0 320 H600 M0 430 H600"/>
+            <path d="M110 0 V520 M250 0 V520 M380 0 V520 M500 0 V520"/>
+          </g>
+          <g stroke="#222" stroke-width="6" fill="none" opacity=".8">
+            <path d="M-20 380 L200 250 L360 300 L620 150"/>
+            <path d="M60 -20 L180 180 L150 400 L300 540"/>
+          </g>
+        </svg>
+        <div class="loc-pins" id="loc-pins"></div>
+        <div class="loc-map-empty" id="loc-map-empty">Mapa de distribuidores</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACTO ============ -->
 <section class="section" id="contacto" style="padding-top:0;">
   <div class="container">
@@ -654,6 +828,33 @@
         <a class="btn btn-metal" id="cta-wsp" href="https://wa.me/5491128563001" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
         <a class="btn btn-outline" href="https://maps.app.goo.gl/zuQQb5c9BZMmMpUT8" target="_blank" rel="noopener">Cómo llegar</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="section" id="newsletter" style="padding-top:0;">
+  <div class="container">
+    <div class="news rv">
+      <p class="eyebrow">Newsletter</p>
+      <h2>Novedades, lanzamientos<br>y algo de oficio</h2>
+      <p class="lead">Contanos desde dónde nos leés y te mandamos lo que te sirve:
+         fichas técnicas y planos si trabajás con esto, ideas y lanzamientos si estás
+         armando tu casa. Sin spam, y te podés borrar cuando quieras.</p>
+
+      <form class="news-form" id="news-form" novalidate>
+        <div class="news-perfiles" role="radiogroup" aria-label="¿Desde dónde nos leés?">
+          <label class="perfil"><input type="radio" name="perfil" value="Arquitecto/a"><span>Arquitecto/a</span></label>
+          <label class="perfil"><input type="radio" name="perfil" value="Diseño de interiores"><span>Diseño de interiores</span></label>
+          <label class="perfil"><input type="radio" name="perfil" value="Creador de contenido"><span>Creador de contenido</span></label>
+          <label class="perfil"><input type="radio" name="perfil" value="Para mi casa"><span>Para mi casa</span></label>
+        </div>
+        <div class="news-row">
+          <input id="news-email" type="email" name="email" placeholder="Tu email" aria-label="Tu email">
+          <button class="btn btn-metal" type="submit">Suscribirme</button>
+        </div>
+        <p class="news-msg" id="news-msg" role="status"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -747,6 +948,95 @@
     el.style.transitionDelay = (i % 4 * 90) + 'ms';
     io.observe(el);
   });
+
+  /* ---------- localizador de distribuidores ---------- */
+  /* OJO: los datos son DEMO, los mismos que en Essentia y Zíngara.
+     Reemplazar ZONAS por los distribuidores reales cuando estén. */
+  (function(){
+    var form = document.getElementById('loc-form');
+    if(!form) return;
+    var ZONAS = {
+      palermo: { label:'Palermo', puntos:[
+        {n:'Casa Belgrano Hogar', a:'Av. Santa Fe 3820, Palermo, CABA', t:'11 4821 5500', x:40, y:46},
+        {n:'Deco Cocinas Palermo', a:'Thames 1290, Palermo, CABA', t:'11 4778 2200', x:48, y:53},
+        {n:'Bazar del Diseño', a:'Av. Córdoba 5410, Palermo, CABA', t:'11 4831 9090', x:34, y:59}
+      ]},
+      belgrano: { label:'Belgrano', puntos:[
+        {n:'Hogar Norte S.A.', a:'Av. Cabildo 2455, Belgrano, CABA', t:'11 4783 1100', x:62, y:28},
+        {n:'Cocinas Cabildo', a:'Av. Cabildo 1890, Belgrano, CABA', t:'11 4702 4040', x:69, y:35},
+        {n:'Vintage Deco', a:'Juramento 2150, Belgrano, CABA', t:'11 4781 7700', x:73, y:25}
+      ]},
+      caballito: { label:'Caballito', puntos:[
+        {n:'Mundo Cocina', a:'Av. Rivadavia 5200, Caballito, CABA', t:'11 4902 3300', x:30, y:70},
+        {n:'El Hogar Moderno', a:'Av. La Plata 1240, Caballito, CABA', t:'11 4923 8800', x:38, y:66},
+        {n:'Distribuidora Centro', a:'Rojas 380, Caballito, CABA', t:'11 4431 1212', x:26, y:78}
+      ]},
+      recoleta: { label:'Recoleta', puntos:[
+        {n:'Premium Living', a:'Av. Callao 1180, Recoleta, CABA', t:'11 4811 6600', x:55, y:42},
+        {n:'Deco Recoleta', a:'Av. Las Heras 2240, Recoleta, CABA', t:'11 4805 9999', x:62, y:48},
+        {n:'Casa Norte', a:'Junín 1450, Recoleta, CABA', t:'11 4807 3030', x:50, y:38}
+      ]}
+    };
+    var res = document.getElementById('loc-results');
+    var pins = document.getElementById('loc-pins');
+    var vacio = document.getElementById('loc-map-empty');
+    function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(); }
+    function buscar(q){
+      q = norm(q); if(!q) return null;
+      for(var k in ZONAS){ if(q.indexOf(k) !== -1 || k.indexOf(q) !== -1) return k; }
+      return null;
+    }
+    function pintar(q){
+      var k = buscar(q);
+      pins.innerHTML = '';
+      if(!k){
+        res.innerHTML = '<p class="loc-none">No encontramos esa zona. Probá con: Palermo, Belgrano, Caballito o Recoleta.</p>';
+        vacio.style.display = 'flex';
+        return;
+      }
+      var z = ZONAS[k];
+      vacio.style.display = 'none';
+      res.innerHTML = '<p class="loc-zone">' + z.puntos.length + ' puntos de venta · ' + z.label + '</p>' +
+        z.puntos.map(function(p, i){
+          return '<div class="loc-card' + (i === 0 ? ' cerca' : '') + '">' +
+                 '<h4>' + p.n + '</h4><p>' + p.a + '</p>' +
+                 '<a href="tel:' + p.t.replace(/\s/g,'') + '">' + p.t + '</a></div>';
+        }).join('');
+      z.puntos.forEach(function(p, i){
+        var pin = document.createElement('div');
+        pin.className = 'loc-pin' + (i === 0 ? ' cerca' : '');
+        pin.style.left = p.x + '%';
+        pin.style.top = p.y + '%';
+        pin.style.animationDelay = (i * 90) + 'ms';
+        pins.appendChild(pin);
+      });
+    }
+    document.getElementById('loc-form').addEventListener('submit', function(e){
+      e.preventDefault(); pintar(document.getElementById('loc-q').value);
+    });
+    document.getElementById('loc-q').addEventListener('input', function(e){
+      if(norm(e.target.value).length >= 3) pintar(e.target.value);
+    });
+  })();
+
+  /* ---------- newsletter ---------- */
+  /* Hoy es una demo: valida y agradece, no manda nada a ningún lado.
+     Al pasar a Shopify, el form apunta a /contact con form_type="customer" y el
+     perfil viaja como contact[tags], que es lo que permite segmentar después. */
+  (function(){
+    var form = document.getElementById('news-form');
+    if(!form) return;
+    var msg = document.getElementById('news-msg');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = document.getElementById('news-email').value.trim();
+      var perfil = form.querySelector('input[name="perfil"]:checked');
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent = 'Revisá el email, no parece válido.'; return; }
+      if(!perfil){ msg.textContent = 'Elegí desde dónde nos leés así te mandamos lo que te sirve.'; return; }
+      msg.textContent = '¡Listo! Te anotamos como "' + perfil.value + '". (Demo: todavía no se envía a ningún lado.)';
+      form.querySelector('button[type="submit"]').disabled = true;
+    });
+  })();
 
   /* el hero arranca con las fotos apenas ampliadas y se asientan al cargar */
   requestAnimationFrame(function(){
