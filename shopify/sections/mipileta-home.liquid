@@ -3,15 +3,10 @@
   GENERADO por build-shopify.js a partir de mipileta-home.html. No editar a mano:
   los cambios se hacen en el HTML y se vuelve a correr `node build-shopify.js`.
 {%- endcomment -%}
-{%- if section.settings.hero_img_cocina != blank -%}
-  {%- assign img_hero_img_cocina = section.settings.hero_img_cocina | image_url: width: 2000 -%}
+{%- if section.settings.hero_img != blank -%}
+  {%- assign img_hero_img = section.settings.hero_img | image_url: width: 2400 -%}
 {%- else -%}
-  {%- assign img_hero_img_cocina = 'home-hero-cocina.jpg' | asset_img_url: '2000x' -%}
-{%- endif -%}
-{%- if section.settings.hero_img_bano != blank -%}
-  {%- assign img_hero_img_bano = section.settings.hero_img_bano | image_url: width: 2000 -%}
-{%- else -%}
-  {%- assign img_hero_img_bano = 'zingara-hero-cobre.png' | asset_img_url: '2000x' -%}
+  {%- assign img_hero_img = 'home-hero-banner.png' | asset_img_url: '2400x' -%}
 {%- endif -%}
 {%- if section.settings.logo != blank -%}
   {%- assign img_logo = section.settings.logo | image_url: width: 900 -%}
@@ -150,83 +145,87 @@
     .topbar.nav-open .hamburger span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
   }
 
-  /* ---------- hero: dos mundos ---------- */
-  /* la home NO muestra un producto: muestra los dos ambientes de la marca.
-     Ese es el corte principal contra las landings de línea (hero de un producto). */
+  /* ---------- hero: banner unico ---------- */
+  /* la foto es apaisada y tiene la mesada vacia a la izquierda: el texto va ahi,
+     igual que en el banner del sitio actual, y el velo lo hace legible */
   .hero{
     position:relative;min-height:calc(100svh - 64px);
-    display:grid;grid-template-columns:1fr 1fr;overflow:hidden;background:#000;
+    display:flex;align-items:center;overflow:hidden;background:#000;
   }
-  .hero-panel{position:relative;overflow:hidden;display:block;}
-  .hero-panel::before{
-    content:"";position:absolute;inset:0;
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background-image:url('{{ img_hero_img }}');
     background-size:cover;background-position:center;
     transform:scale(1.06);
-    transition:transform 1.4s cubic-bezier(.22,.61,.36,1),filter .6s ease;
-    filter:brightness(.42) saturate(.85);
+    transition:transform 1.6s cubic-bezier(.22,.61,.36,1);
   }
-  .hero-panel--cocina::before{background-image:url('{{ img_hero_img_cocina }}');background-position:center 28%;}
-  /* la foto de Zíngara es apaisada: en un panel vertical, 'cover' agranda la bacha hasta
-     perderla. La dejamos entrar entera y el negro del propio render hace de fondo */
-  .hero-panel--bano::before{
-    background-image:url('{{ img_hero_img_bano }}');
-    background-size:122% auto;background-position:center 74%;background-color:#000;
-    background-repeat:no-repeat;
-  }
-  .hero.on .hero-panel::before{transform:scale(1);}
-  .hero-panel::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.15) 34%,rgba(0,0,0,.82) 100%);
-  }
-  .hero-panel:hover::before{filter:brightness(.62) saturate(1);}
-  /* costura central: una línea de luz cálida, el guiño de marca */
+  .hero.on::before{transform:scale(1);}
   .hero::after{
-    content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;z-index:3;
-    background:linear-gradient(180deg,transparent,rgba(201,146,90,.55) 30%,rgba(201,146,90,.55) 70%,transparent);
-    opacity:.8;pointer-events:none;
+    content:"";position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.6) 38%,rgba(0,0,0,.12) 68%,rgba(0,0,0,.3) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 26%,transparent 62%,rgba(0,0,0,.8) 100%);
   }
-  .hero-tag{
-    position:absolute;left:0;right:0;bottom:26px;z-index:4;text-align:center;
-    font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#dfe3e8;
-  }
-  .hero-tag b{display:block;font-family:"Raleway",sans-serif;font-weight:300;
-    font-size:1.15rem;letter-spacing:.16em;margin-top:7px;color:#fff;}
-  .hero-tag .arrow{opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s;
-    margin-left:8px;font-size:1rem;}
-  .hero-panel:hover .hero-tag .arrow{opacity:1;transform:none;}
-  .hero-copy{
-    position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;text-align:center;padding:80px 20px 150px;
-    pointer-events:none;
-  }
-  .hero-copy > *{pointer-events:auto;}
+  .hero-copy{position:relative;z-index:2;width:100%;padding-bottom:90px;}
+  .hero-copy .container{max-width:1180px;}
   .hero h1{
     font-family:"Raleway",sans-serif;font-weight:200;
-    font-size:clamp(2.1rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:.005em;
-    max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.55);
+    font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:.005em;
+    max-width:20ch;text-shadow:0 2px 24px rgba(0,0,0,.55);
   }
   /* sobre foto oscura el acero completo se apaga: acá va una versión más clara */
   .hero h1 em{font-style:normal;font-weight:700;
     background:linear-gradient(180deg,#ffffff 0%,#eaeef2 28%,#bcc3cc 56%,#eff3f7 78%,#d2d9e1 100%);
     -webkit-background-clip:text;background-clip:text;color:transparent;}
-  .hero .sub{color:#d6dae0;font-weight:300;max-width:52ch;margin:20px auto 0;
-    text-shadow:0 1px 12px rgba(0,0,0,.6);}
-  .hero .cta-row{margin-top:30px;}
+  .hero .sub{color:#d6dae0;font-weight:300;max-width:44ch;margin:20px 0 0;
+    font-size:clamp(1rem,1.5vw,1.15rem);text-shadow:0 1px 12px rgba(0,0,0,.6);}
+  .hero .cta-row{margin-top:32px;}
+
+  /* franja de acceso a las dos lineas, pegada al pie del banner */
+  .hero-worlds{
+    position:absolute;left:0;right:0;bottom:0;z-index:3;
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid rgba(255,255,255,.14);
+    backdrop-filter:blur(6px);background:rgba(0,0,0,.28);
+  }
+  /* la costura cálida entre los dos mundos, el guiño de marca */
+  .hero-worlds::after{
+    content:"";position:absolute;top:14%;bottom:14%;left:50%;width:1px;
+    background:linear-gradient(180deg,transparent,rgba(201,146,90,.6),transparent);
+  }
+  .hero-world{
+    display:flex;flex-direction:column;align-items:center;gap:5px;
+    padding:16px 20px;text-align:center;transition:background .3s ease;
+  }
+  .hero-world:hover{background:rgba(255,255,255,.06);}
+  .hero-world span{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:#b5bbc3;}
+  .hero-world b{font-family:"Raleway",sans-serif;font-weight:300;
+    font-size:1.05rem;letter-spacing:.16em;color:#fff;}
+  .hero-world .arrow{opacity:0;transform:translateX(-6px);
+    transition:opacity .3s,transform .3s;margin-left:8px;font-size:.9rem;}
+  .hero-world:hover .arrow{opacity:1;transform:none;}
+
   .scroll-hint{
-    position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:6;
+    position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:2;
     width:1px;height:44px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);
     animation:hint 2.4s ease-in-out infinite;
   }
   @keyframes hint{0%,100%{opacity:.25;height:30px}50%{opacity:.9;height:52px}}
   @media(max-width:760px){
-    .hero{grid-template-columns:1fr;grid-template-rows:1fr 1fr;min-height:calc(100svh - 58px);}
-    .hero::after{top:50%;bottom:auto;left:0;right:0;width:auto;height:1px;
-      background:linear-gradient(90deg,transparent,rgba(201,146,90,.5),transparent);}
-    .hero-panel--cocina .hero-tag{bottom:auto;top:22px;}
-    .hero-tag{bottom:22px;font-size:.64rem;}
-    .hero-tag b{font-size:.95rem;}
-    .hero-copy{padding:0 18px;justify-content:center;}
+    /* en vertical la mesada vacía se pierde: encuadramos sobre la pileta y
+       el velo pasa a ser de arriba hacia abajo */
+    .hero{min-height:calc(100svh - 58px);}
+    .hero::before{background-position:62% center;}
+    .hero::after{
+      background:linear-gradient(180deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.85) 100%);
+    }
+    .hero-copy{padding-bottom:120px;}
+    .hero h1{max-width:none;}
+    .hero .sub{max-width:none;}
     .scroll-hint{display:none;}
+    .hero-world{padding:13px 10px;}
+    .hero-world b{font-size:.92rem;letter-spacing:.12em;}
+    .hero-world span{font-size:.6rem;}
   }
 
   /* ---------- marquee de pilares ---------- */
@@ -513,24 +512,23 @@
   </div>
 </header>
 
-<!-- ============ HERO: DOS MUNDOS ============ -->
+<!-- ============ HERO: BANNER ============ -->
 <section class="hero" id="top">
-  <a class="hero-panel hero-panel--cocina" href="{{ section.settings.hero_cocina_url | default: '#lineas' }}" aria-label="{{ section.settings.hero_cocina_name }}">
-    <div class="hero-tag">{{ section.settings.hero_cocina_kicker }}<b>{{ section.settings.hero_cocina_name }} <span class="arrow">→</span></b></div>
-  </a>
-  <a class="hero-panel hero-panel--bano" href="{{ section.settings.hero_bano_url | default: '#lineas' }}" aria-label="{{ section.settings.hero_bano_name }}">
-    <div class="hero-tag">{{ section.settings.hero_bano_kicker }}<b>{{ section.settings.hero_bano_name }} <span class="arrow">→</span></b></div>
-  </a>
-
   <div class="hero-copy">
-    <h1>{{ section.settings.hero_title }}<br>{{ section.settings.hero_title_2 }} <em>{{ section.settings.hero_title_hl }}</em></h1>
-    <p class="sub">{{ section.settings.hero_sub }}</p>
-    <div class="cta-row">
-      <a class="btn btn-metal" href="{{ section.settings.hero_cta1_url | default: '#lineas' }}">{{ section.settings.hero_cta1_label }}</a>
-      <a class="btn btn-outline" href="{{ section.settings.hero_cta2_url | default: '/collections/todos-los-productos' }}">{{ section.settings.hero_cta2_label }}</a>
+    <div class="container">
+      <h1>{{ section.settings.hero_title }}<br>{{ section.settings.hero_title_2 }} <em>{{ section.settings.hero_title_hl }}</em></h1>
+      <p class="sub">{{ section.settings.hero_sub }}</p>
+      <div class="cta-row">
+        <a class="btn btn-metal" href="{{ section.settings.hero_cta1_url | default: '#lineas' }}">{{ section.settings.hero_cta1_label }}</a>
+        <a class="btn btn-outline" href="{{ section.settings.hero_cta2_url | default: '/collections/todos-los-productos' }}">{{ section.settings.hero_cta2_label }}</a>
+      </div>
     </div>
   </div>
   <div class="scroll-hint"></div>
+  <div class="hero-worlds">
+    <a class="hero-world" href="{{ section.settings.hero_cocina_url | default: '#lineas' }}"><span>{{ section.settings.hero_cocina_kicker }}</span><b>{{ section.settings.hero_cocina_name }} <span class="arrow">→</span></b></a>
+    <a class="hero-world" href="{{ section.settings.hero_bano_url | default: '#lineas' }}"><span>{{ section.settings.hero_bano_kicker }}</span><b>{{ section.settings.hero_bano_name }} <span class="arrow">→</span></b></a>
+  </div>
 </section>
 
 <!-- ============ PILARES (marquee) ============ -->
@@ -1014,18 +1012,13 @@
     },
     {
       "type": "paragraph",
-      "content": "El hero muestra los dos mundos de la marca: cocina a la izquierda, baño a la derecha. Si no cargás imágenes acá, usa las que están en los archivos del tema."
+      "content": "Banner principal a lo ancho. Abajo, la franja con las dos líneas. Si no cargás una imagen acá, usa la que está en los archivos del tema."
     },
     {
       "type": "image_picker",
-      "id": "hero_img_cocina",
-      "label": "Foto cocina (izquierda)"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_img_bano",
-      "label": "Foto baño (derecha)",
-      "info": "Ojo: esta foto entra completa, no recortada. Conviene una apaisada con fondo oscuro."
+      "id": "hero_img",
+      "label": "Foto del banner",
+      "info": "Apaisada. El texto va sobre el sector izquierdo, así que conviene que esa zona esté despejada."
     },
     {
       "type": "image_picker",
@@ -1036,7 +1029,7 @@
     {
       "type": "text",
       "id": "hero_cocina_kicker",
-      "label": "Etiqueta izquierda",
+      "label": "Franja — etiqueta izquierda",
       "default": "Cocina"
     },
     {
@@ -1053,7 +1046,7 @@
     {
       "type": "text",
       "id": "hero_bano_kicker",
-      "label": "Etiqueta derecha",
+      "label": "Franja — etiqueta derecha",
       "default": "Baño"
     },
     {
@@ -1071,26 +1064,26 @@
       "type": "text",
       "id": "hero_title",
       "label": "Título — línea 1",
-      "default": "Tus espacios se merecen"
+      "default": "Tu cocina se merece"
     },
     {
       "type": "text",
       "id": "hero_title_2",
       "label": "Título — línea 2",
-      "default": "el mejor"
+      "default": "la"
     },
     {
       "type": "text",
       "id": "hero_title_hl",
-      "label": "Palabra destacada (acero)",
-      "default": "acero",
-      "info": "Se pinta con el degradé de acero."
+      "label": "Palabras destacadas",
+      "default": "mejor pileta",
+      "info": "Se pintan con el degradé de acero."
     },
     {
       "type": "textarea",
       "id": "hero_sub",
       "label": "Bajada",
-      "default": "Piletas de cocina y bachas de baño en acero inoxidable AISI&nbsp;304. Diseño y fabricación argentina, con 10 años de garantía."
+      "default": "Con 10 años de garantía."
     },
     {
       "type": "text",
