@@ -82,7 +82,7 @@
   h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.06;}
   .container{max-width:1180px;margin:0 auto;padding:0 20px;}
   .section{padding-block:clamp(56px,8vw,104px);}
-  #lineas,#marca,#compra,#inspileta,#donde-comprar,#newsletter,#contacto{scroll-margin-top:84px;}
+  #lineas,#calidad,#compra,#inspileta,#donde-comprar,#newsletter,#contacto{scroll-margin-top:84px;}
 
   /* ---------- helpers ---------- */
   .eyebrow{
@@ -134,7 +134,7 @@
     background:none;border:0;cursor:pointer;padding:8px;width:44px;height:44px;}
   .hamburger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;
     transition:transform .3s ease,opacity .3s ease;}
-  @media(max-width:1060px){
+  @media(max-width:960px){
     .topbar .logo{height:36px;}
     .hamburger{display:flex;}
     .topbar nav{
@@ -505,8 +505,7 @@
     <a href="#top" aria-label="Mi Pileta"><img class="logo" src="{{ img_logo }}" alt="Mi Pileta"></a>
     <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     <nav id="topnav">
-      <a href="#lineas">Líneas</a>
-      <a href="#marca">La marca</a>
+      <a href="#calidad">Calidad</a>
       <a href="#compra">Compra protegida</a>
       <a href="#inspileta">Inspileta</a>
       <a href="#donde-comprar">Dónde comprar</a>
@@ -628,7 +627,7 @@
 </section>
 
 <!-- ============ LA MARCA (franja clara) ============ -->
-<section class="section paper" id="marca">
+<section class="section paper" id="calidad">
   <div class="container marca-grid">
     <div class="marca-txt rv">
       <p class="eyebrow">{{ section.settings.marca_eyebrow }}</p>
@@ -1324,7 +1323,7 @@
       "type": "text",
       "id": "marca_eyebrow",
       "label": "Volanta",
-      "default": "La marca"
+      "default": "Calidad"
     },
     {
       "type": "text",
