@@ -166,7 +166,7 @@
       linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.6) 38%,rgba(0,0,0,.12) 68%,rgba(0,0,0,.3) 100%),
       linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 26%,transparent 62%,rgba(0,0,0,.8) 100%);
   }
-  .hero-copy{position:relative;z-index:2;width:100%;padding-bottom:90px;}
+  .hero-copy{position:relative;z-index:2;width:100%;padding-bottom:40px;}
   .hero-copy .container{max-width:1180px;}
   .hero h1{
     font-family:"Raleway",sans-serif;font-weight:200;
@@ -180,30 +180,6 @@
   .hero .sub{color:#d6dae0;font-weight:300;max-width:44ch;margin:20px 0 0;
     font-size:clamp(1rem,1.5vw,1.15rem);text-shadow:0 1px 12px rgba(0,0,0,.6);}
   .hero .cta-row{margin-top:32px;}
-
-  /* franja de acceso a las dos lineas, pegada al pie del banner */
-  .hero-worlds{
-    position:absolute;left:0;right:0;bottom:0;z-index:3;
-    display:grid;grid-template-columns:1fr 1fr;
-    border-top:1px solid rgba(255,255,255,.14);
-    backdrop-filter:blur(6px);background:rgba(0,0,0,.28);
-  }
-  /* la costura cálida entre los dos mundos, el guiño de marca */
-  .hero-worlds::after{
-    content:"";position:absolute;top:14%;bottom:14%;left:50%;width:1px;
-    background:linear-gradient(180deg,transparent,rgba(201,146,90,.6),transparent);
-  }
-  .hero-world{
-    display:flex;flex-direction:column;align-items:center;gap:5px;
-    padding:16px 20px;text-align:center;transition:background .3s ease;
-  }
-  .hero-world:hover{background:rgba(255,255,255,.06);}
-  .hero-world span{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:#b5bbc3;}
-  .hero-world b{font-family:"Raleway",sans-serif;font-weight:300;
-    font-size:1.05rem;letter-spacing:.16em;color:#fff;}
-  .hero-world .arrow{opacity:0;transform:translateX(-6px);
-    transition:opacity .3s,transform .3s;margin-left:8px;font-size:.9rem;}
-  .hero-world:hover .arrow{opacity:1;transform:none;}
 
   .scroll-hint{
     position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:2;
@@ -219,13 +195,10 @@
     .hero::after{
       background:linear-gradient(180deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.85) 100%);
     }
-    .hero-copy{padding-bottom:120px;}
+    .hero-copy{padding-bottom:40px;}
     .hero h1{max-width:none;}
     .hero .sub{max-width:none;}
     .scroll-hint{display:none;}
-    .hero-world{padding:13px 10px;}
-    .hero-world b{font-size:.92rem;letter-spacing:.12em;}
-    .hero-world span{font-size:.6rem;}
   }
 
   /* ---------- marquee de pilares ---------- */
@@ -525,10 +498,6 @@
     </div>
   </div>
   <div class="scroll-hint"></div>
-  <div class="hero-worlds">
-    <a class="hero-world" href="{{ section.settings.hero_cocina_url | default: '#lineas' }}"><span>{{ section.settings.hero_cocina_kicker }}</span><b>{{ section.settings.hero_cocina_name }} <span class="arrow">→</span></b></a>
-    <a class="hero-world" href="{{ section.settings.hero_bano_url | default: '#lineas' }}"><span>{{ section.settings.hero_bano_kicker }}</span><b>{{ section.settings.hero_bano_name }} <span class="arrow">→</span></b></a>
-  </div>
 </section>
 
 <!-- ============ PILARES (marquee) ============ -->
@@ -1025,40 +994,6 @@
       "id": "logo",
       "label": "Logo blanco",
       "info": "Se usa en la barra, en el hero y en el pie."
-    },
-    {
-      "type": "text",
-      "id": "hero_cocina_kicker",
-      "label": "Franja — etiqueta izquierda",
-      "default": "Cocina"
-    },
-    {
-      "type": "text",
-      "id": "hero_cocina_name",
-      "label": "Nombre línea izquierda",
-      "default": "Essentia"
-    },
-    {
-      "type": "url",
-      "id": "hero_cocina_url",
-      "label": "Link panel izquierdo"
-    },
-    {
-      "type": "text",
-      "id": "hero_bano_kicker",
-      "label": "Franja — etiqueta derecha",
-      "default": "Baño"
-    },
-    {
-      "type": "text",
-      "id": "hero_bano_name",
-      "label": "Nombre línea derecha",
-      "default": "Zíngara"
-    },
-    {
-      "type": "url",
-      "id": "hero_bano_url",
-      "label": "Link panel derecho"
     },
     {
       "type": "text",
