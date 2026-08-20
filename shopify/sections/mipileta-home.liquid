@@ -150,7 +150,7 @@
      igual que en el banner del sitio actual, y el velo lo hace legible */
   .hero{
     position:relative;min-height:calc(100svh - 64px);
-    display:flex;align-items:flex-start;overflow:hidden;background:#000;
+    display:flex;align-items:center;overflow:hidden;background:#000;
   }
   .hero::before{
     content:"";position:absolute;inset:0;z-index:0;
@@ -163,11 +163,11 @@
   .hero::after{
     content:"";position:absolute;inset:0;z-index:1;
     background:
-      linear-gradient(180deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.62) 26%,rgba(0,0,0,.1) 52%,rgba(0,0,0,.5) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.68) 34%,rgba(0,0,0,.3) 62%,rgba(0,0,0,.55) 100%),
       linear-gradient(90deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.14) 42%,transparent 68%);
   }
   .hero-copy{position:relative;z-index:2;width:100%;
-    padding-top:clamp(56px,9vh,110px);padding-bottom:40px;}
+    padding-top:0;padding-bottom:clamp(30px,9vh,110px);}
   .hero-copy .container{max-width:1180px;}
   .hero h1{
     font-family:"Raleway",sans-serif;font-weight:200;
@@ -191,8 +191,10 @@
   @media(max-width:760px){
     /* en vertical la mesada vacía se pierde: encuadramos sobre la pileta y
        el velo pasa a ser de arriba hacia abajo */
-    .hero{min-height:calc(100svh - 58px);}
-    .hero::before{background-position:62% center;}
+    .hero{min-height:min(78svh,620px);}
+    /* en vertical entra poco ancho: encuadramos donde estan las manos y la tabla,
+       que es lo que le da vida, y no sobre la cuba vacia */
+    .hero::before{background-position:30% center;}
     .hero::after{
       background:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 42%,rgba(0,0,0,.7) 100%);
     }
