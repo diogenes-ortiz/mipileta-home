@@ -24,9 +24,9 @@
   {%- assign img_l1_img = 'familia-essentia-3.jpg' | asset_img_url: '1800x' -%}
 {%- endif -%}
 {%- if section.settings.l2_img != blank -%}
-  {%- assign img_l2_img = section.settings.l2_img | image_url: width: 1400 -%}
+  {%- assign img_l2_img = section.settings.l2_img | image_url: width: 1800 -%}
 {%- else -%}
-  {%- assign img_l2_img = 'zingara-hero.png' | asset_img_url: '1400x' -%}
+  {%- assign img_l2_img = 'zingara-hero-cobre.png' | asset_img_url: '1800x' -%}
 {%- endif -%}
 {%- if section.settings.l3_img != blank -%}
   {%- assign img_l3_img = section.settings.l3_img | image_url: width: 1600 -%}
@@ -51,7 +51,7 @@
 {%- if section.settings.p3_img != blank -%}
   {%- assign img_p3_img = section.settings.p3_img | image_url: width: 900 -%}
 {%- else -%}
-  {%- assign img_p3_img = 'zingara-hero-cobre.png' | asset_img_url: '900x' -%}
+  {%- assign img_p3_img = 'zingara-hero.png' | asset_img_url: '900x' -%}
 {%- endif -%}
 
 <style>
