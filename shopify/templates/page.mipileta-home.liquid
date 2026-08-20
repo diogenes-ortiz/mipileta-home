@@ -1,0 +1,28 @@
+{%- comment -%}
+  templates/page.mipileta-home.liquid — pagina a pantalla completa.
+  `layout none` deja afuera el header, el footer y el CSS del tema: la pagina se
+  ve exactamente como la version de GitHub y ningun estilo de la tienda la pisa.
+  content_for_header es obligatorio (editor de temas, analytics, pixeles).
+{%- endcomment -%}
+{% layout none %}<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: shop.name }}</title>
+  <meta name="description" content="{{ page.metafields.global.description | default: shop.description | strip_html | truncate: 160 }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- comment -%}
+    Mientras la pagina este en revision y no queramos que Google la levante,
+    descomentar la linea de abajo (reemplaza al gate con contraseña de GitHub):
+    <meta name="robots" content="noindex,nofollow">
+  {%- endcomment -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=Raleway:wght@200;300;400;700&display=swap" rel="stylesheet">
+  {{ content_for_header }}
+</head>
+<body>
+  {% section 'mipileta-home' %}
+</body>
+</html>
