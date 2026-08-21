@@ -149,40 +149,26 @@
   /* la foto es apaisada y tiene la mesada vacia a la izquierda: el texto va ahi,
      igual que en el banner del sitio actual, y el velo lo hace legible */
   .hero{
-    position:relative;min-height:calc(100svh - 150px);
-    display:flex;align-items:center;overflow:hidden;background:#0b0b0c;
+    position:relative;min-height:calc(100svh - 190px);
+    display:flex;align-items:center;overflow:hidden;background:#000;
   }
-  /* relleno: la misma foto ampliada y desenfocada. Sin esto, al entrar completa
-     quedarían bandas negras planas a los costados en pantallas anchas. */
   .hero::before{
     content:"";position:absolute;inset:0;z-index:0;
     background-image:url('{{ img_hero_img }}');
     background-size:cover;background-position:center;
-    filter:blur(34px) brightness(.4) saturate(.85);
-    transform:scale(1.16);
-  }
-  /* la foto de verdad: completa, nunca recortada */
-  .hero-photo{
-    position:absolute;inset:0;z-index:1;
-    background-image:url('{{ img_hero_img }}');
-    background-size:contain;background-position:center;background-repeat:no-repeat;
-    /* los bordes de la foto se funden con el relleno desenfocado: sin esto se ve
-       el corte vertical donde termina la imagen nitida */
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
-    mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);
-    transform:scale(1.04);
+    transform:scale(1.06);
     transition:transform 1.6s cubic-bezier(.22,.61,.36,1);
   }
-  .hero.on .hero-photo{transform:scale(1);}
+  .hero.on::before{transform:scale(1);}
   .hero::after{
-    content:"";position:absolute;inset:0;z-index:2;
+    content:"";position:absolute;inset:0;z-index:1;
     background:
-      radial-gradient(42% 50% at 56% 54%,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 46%,transparent 66%),
-      radial-gradient(86% 90% at 56% 54%,transparent 36%,rgba(0,0,0,.6) 100%),
-      linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.62) 26%,rgba(0,0,0,.2) 48%,transparent 66%),
-      linear-gradient(180deg,rgba(0,0,0,.55) 0%,transparent 34%,transparent 66%,rgba(0,0,0,.45) 100%);
+      radial-gradient(46% 54% at 54% 56%,rgba(255,255,255,.13) 0%,rgba(255,255,255,.05) 48%,transparent 68%),
+      radial-gradient(88% 92% at 54% 56%,transparent 38%,rgba(0,0,0,.66) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 32%,rgba(0,0,0,.12) 60%,rgba(0,0,0,.35) 100%),
+      linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.55) 26%,rgba(0,0,0,.18) 48%,transparent 68%);
   }
-  .hero-copy{position:relative;z-index:3;width:100%;
+  .hero-copy{position:relative;z-index:2;width:100%;
     padding-top:0;padding-bottom:clamp(30px,9vh,110px);}
   .hero-copy .container{max-width:1180px;}
   .hero h1{
@@ -199,7 +185,7 @@
   .hero .cta-row{margin-top:32px;}
 
   .scroll-hint{
-    position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:3;
+    position:absolute;left:50%;transform:translateX(-50%);bottom:96px;z-index:2;
     width:1px;height:44px;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent);
     animation:hint 2.4s ease-in-out infinite;
   }
@@ -207,10 +193,10 @@
   @media(max-width:760px){
     /* en vertical la mesada vacía se pierde: encuadramos sobre la pileta y
        el velo pasa a ser de arriba hacia abajo */
-    .hero{min-height:min(72svh,560px);}
+    .hero{min-height:min(66svh,540px);}
     /* en vertical entra poco ancho: encuadramos donde estan las manos y la tabla,
        que es lo que le da vida, y no sobre la cuba vacia */
-    .hero-photo{background-size:contain;background-position:center;}
+    .hero::before{background-position:30% center;}
     .hero::after{
       background:
         radial-gradient(58% 42% at 60% 58%,rgba(255,255,255,.12) 0%,transparent 66%),
@@ -509,7 +495,6 @@
 
 <!-- ============ HERO: BANNER ============ -->
 <section class="hero" id="top">
-  <div class="hero-photo"></div>
   <div class="hero-copy">
     <div class="container">
       <h1>{{ section.settings.hero_title }}<br>{{ section.settings.hero_title_2 }} <em>{{ section.settings.hero_title_hl }}</em></h1>
