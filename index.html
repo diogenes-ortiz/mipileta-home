@@ -37,7 +37,7 @@
   h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.06;}
   .container{max-width:1180px;margin:0 auto;padding:0 20px;}
   .section{padding-block:clamp(56px,8vw,104px);}
-  #lineas,#calidad,#compra,#inspileta,#donde-comprar,#newsletter,#contacto{scroll-margin-top:84px;}
+  #lineas,#catalogo,#calidad,#compra,#inspileta,#donde-comprar,#newsletter,#contacto{scroll-margin-top:84px;}
 
   /* ---------- helpers ---------- */
   .eyebrow{
@@ -260,6 +260,43 @@
   .extra p{margin:5px 0 0;color:var(--muted);font-size:.87rem;font-weight:300;}
   .extra .linea-go{margin-top:auto;padding-top:16px;font-size:.78rem;align-self:flex-start;}
   @media(max-width:860px){.extras{grid-template-columns:1fr;}}
+
+  /* ---------- catalogo ---------- */
+  /* las fotos de producto vienen sobre negro o recortadas, asi que las cajas
+     van en negro puro y la pieza flota: no hay recuadro blanco que rompa */
+  .cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-top:40px;}
+  .cat-filtros{display:flex;gap:8px;flex-wrap:wrap;}
+  .cat-filtro{
+    border:1px solid var(--line);border-radius:99px;padding:9px 20px;
+    font-family:inherit;font-size:.8rem;letter-spacing:.04em;color:#c8ced6;
+    background:none;cursor:pointer;
+    transition:background .25s,border-color .25s,color .25s;
+  }
+  .cat-filtro:hover{border-color:#5a5a5a;color:#fff;}
+  .cat-filtro.on{background:#fff;border-color:#fff;color:var(--ink);font-weight:700;}
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
+  .prod{
+    display:block;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    background:var(--card);
+    transition:border-color .35s ease,transform .5s cubic-bezier(.22,.61,.36,1);
+  }
+  .prod:hover{border-color:#4a4a4a;transform:translateY(-4px);}
+  .prod-media{position:relative;aspect-ratio:1/1;background:#000;overflow:hidden;}
+  .prod-media img{
+    width:100%;height:100%;object-fit:contain;padding:9%;
+    transition:transform .8s cubic-bezier(.22,.61,.36,1);
+  }
+  .prod:hover .prod-media img{transform:scale(1.07);}
+  .prod-body{padding:15px 18px 19px;border-top:1px solid var(--line);}
+  .prod-body b{display:block;font-size:.93rem;font-weight:700;}
+  .prod-body span{display:block;font-size:.76rem;color:var(--muted);margin-top:3px;letter-spacing:.02em;}
+  @media(max-width:980px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){
+    .cat-head{flex-direction:column;align-items:flex-start;}
+    .cat-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+    .prod-body{padding:12px 14px 16px;}
+    .prod-body b{font-size:.85rem;}
+  }
 
   /* ---------- franja clara: la marca ---------- */
   /* el quiebre a claro es exclusivo de la home; las landings de línea son 100% negras */
@@ -646,6 +683,143 @@
   </div>
 </section>
 
+<!-- ============ CATÁLOGO ============ -->
+<section class="section" id="catalogo" style="padding-top:0;">
+  <div class="container">
+    <div class="cat-head rv">
+      <div>
+        <p class="eyebrow">Catálogo</p>
+        <h2 class="title">Elegí <strong>tu modelo</strong></h2>
+      </div>
+      <div class="cat-filtros" role="group" aria-label="Filtrar por ambiente">
+        <button class="cat-filtro on" data-f="todo" type="button">Todo</button>
+        <button class="cat-filtro" data-f="cocina" type="button">Cocina</button>
+        <button class="cat-filtro" data-f="bano" type="button">Baño</button>
+        <button class="cat-filtro" data-f="acc" type="button">Accesorios</button>
+      </div>
+    </div>
+
+    <div class="cat-grid" id="cat-grid">
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-640" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-640.jpg" alt="Essentia simple 640" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 640</b>
+          <span>Simple · satinada</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-640b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-640B.jpg" alt="Essentia simple 640B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 640B</b>
+          <span>Simple · black PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-660" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-660.jpg" alt="Essentia simple 660" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 660</b>
+          <span>Simple · satinada</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-660b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-660B.jpg" alt="Essentia simple 660B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 660B</b>
+          <span>Simple · black PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-670" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-670.jpg" alt="Essentia simple 670" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 670</b>
+          <span>Simple · satinada</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-670b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-670B.jpg" alt="Essentia simple 670B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 670B</b>
+          <span>Simple · black PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-doble-671" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-671.jpg" alt="Essentia doble 671" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia doble 671</b>
+          <span>Doble · satinada</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-doble-671b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/model-671B.jpg" alt="Essentia doble 671B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia doble 671B</b>
+          <span>Doble · black PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-938g" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/zingara-938G-cut.png" alt="Zíngara 938G" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara 938G</b>
+          <span>Cuadrada · gold PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-938b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/zingara-938B-cut.png" alt="Zíngara 938B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara 938B</b>
+          <span>Cuadrada · black PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-940g" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/zingara-940G-cut.png" alt="Zíngara 940G" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara 940G</b>
+          <span>Redonda · gold PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-940b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/zingara-940B-cut.png" alt="Zíngara 940B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara 940B</b>
+          <span>Redonda · black PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/tablas-de-acero" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/acc-tabla-acero-cut.png" alt="Tablas de acero" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Tablas de acero</b>
+          <span>Para 640, 660, 670 y 671</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/rejilla-flexible" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/acc-rejilla.png" alt="Rejilla flexible" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Rejilla flexible</b>
+          <span>Protege el fondo de la cuba</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/barra-escurridora-60" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/acc-barra.png" alt="Barra escurridora 60" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Barra escurridora 60</b>
+          <span>Escurre sobre la pileta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9000-copia" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/acc-cesto.png" alt="Cestillos 9000" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Cestillos 9000</b>
+          <span>Repuesto de desagüe</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="center cta-row rv" style="margin-top:36px;">
+      <a class="btn btn-outline" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Ver el catálogo completo</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ LA MARCA (franja clara) ============ -->
 <section class="section paper" id="calidad">
   <div class="container marca-grid">
@@ -1022,6 +1196,23 @@
       if(!perfil){ msg.textContent = 'Elegí desde dónde nos leés así te mandamos lo que te sirve.'; return; }
       msg.textContent = '¡Listo! Te anotamos como "' + perfil.value + '". (Demo: todavía no se envía a ningún lado.)';
       form.querySelector('button[type="submit"]').disabled = true;
+    });
+  })();
+
+  /* filtro del catalogo */
+  (function(){
+    var btns = document.querySelectorAll(".cat-filtro");
+    if(!btns.length) return;
+    var prods = document.querySelectorAll(".prod");
+    btns.forEach(function(b){
+      b.addEventListener("click", function(){
+        var f = b.getAttribute("data-f");
+        document.querySelector(".cat-filtro.on").classList.remove("on");
+        b.classList.add("on");
+        prods.forEach(function(p){
+          p.style.display = (f === "todo" || p.getAttribute("data-cat") === f) ? "" : "none";
+        });
+      });
     });
   })();
 
