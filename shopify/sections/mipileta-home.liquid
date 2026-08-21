@@ -8,6 +8,11 @@
 {%- else -%}
   {%- assign img_hero_img = 'home-hero-acero.png' | asset_img_url: '2400x' -%}
 {%- endif -%}
+{%- if section.settings.hero_img_2 != blank -%}
+  {%- assign img_hero_img_2 = section.settings.hero_img_2 | image_url: width: 2400 -%}
+{%- else -%}
+  {%- assign img_hero_img_2 = 'home-hero-banner.png' | asset_img_url: '2400x' -%}
+{%- endif -%}
 {%- if section.settings.logo != blank -%}
   {%- assign img_logo = section.settings.logo | image_url: width: 900 -%}
 {%- else -%}
@@ -149,17 +154,25 @@
   /* la foto es apaisada y tiene la mesada vacia a la izquierda: el texto va ahi,
      igual que en el banner del sitio actual, y el velo lo hace legible */
   .hero{
-    position:relative;min-height:calc(100svh - 190px);
+    position:relative;min-height:calc(100svh - 110px);
     display:flex;align-items:center;overflow:hidden;background:#000;
   }
-  .hero::before{
-    content:"";position:absolute;inset:0;z-index:0;
-    background-image:url('{{ img_hero_img }}');
-    background-size:cover;background-position:center 64%;
+  /* dos banners que se van turnando. Cada uno con su encuadre: la escena de las
+     manos necesita bajar mas para que entre el borde inferior de la cuba. */
+  .hero-slides{
+    position:absolute;inset:0;z-index:0;
     transform:scale(1.06);
     transition:transform 1.6s cubic-bezier(.22,.61,.36,1);
   }
-  .hero.on::before{transform:scale(1);}
+  .hero.on .hero-slides{transform:scale(1);}
+  .hero-slide{
+    position:absolute;inset:0;opacity:0;
+    background-size:cover;background-repeat:no-repeat;
+    transition:opacity 1.5s ease;
+  }
+  .hero-slide.is-on{opacity:1;}
+  .hero-slide--1{background-image:url('{{ img_hero_img }}');background-position:center 64%;}
+  .hero-slide--2{background-image:url('{{ img_hero_img_2 }}');background-position:center 58%;}
   .hero::after{
     content:"";position:absolute;inset:0;z-index:1;
     background:
@@ -193,10 +206,10 @@
   @media(max-width:760px){
     /* en vertical la mesada vacía se pierde: encuadramos sobre la pileta y
        el velo pasa a ser de arriba hacia abajo */
-    .hero{min-height:min(66svh,540px);}
+    .hero{min-height:min(76svh,600px);}
     /* en vertical entra poco ancho: encuadramos donde estan las manos y la tabla,
        que es lo que le da vida, y no sobre la cuba vacia */
-    .hero::before{background-position:30% center;}
+    .hero-slide{background-position:center 60%;}
     .hero::after{
       background:
         radial-gradient(58% 42% at 60% 58%,rgba(255,255,255,.12) 0%,transparent 66%),
@@ -495,6 +508,10 @@
 
 <!-- ============ HERO: BANNER ============ -->
 <section class="hero" id="top">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide hero-slide--1 is-on"></div>
+    <div class="hero-slide hero-slide--2"></div>
+  </div>
   <div class="hero-copy">
     <div class="container">
       <h1>{{ section.settings.hero_title }}<br>{{ section.settings.hero_title_2 }} <em>{{ section.settings.hero_title_hl }}</em></h1>
@@ -969,6 +986,19 @@
     });
   })();
 
+  /* los banners se van turnando (se frena si el sistema pide menos movimiento) */
+  (function(){
+    var slides = document.querySelectorAll(".hero-slide");
+    if(slides.length < 2) return;
+    if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var i = 0;
+    setInterval(function(){
+      slides[i].classList.remove("is-on");
+      i = (i + 1) % slides.length;
+      slides[i].classList.add("is-on");
+    }, 6000);
+  })();
+
   /* el hero arranca con las fotos apenas ampliadas y se asientan al cargar */
   requestAnimationFrame(function(){
     setTimeout(function(){ document.querySelector('.hero').classList.add('on'); }, 60);
@@ -989,13 +1019,19 @@
     },
     {
       "type": "paragraph",
-      "content": "Banner principal a lo ancho. Abajo, la franja con las dos líneas. Si no cargás una imagen acá, usa la que está en los archivos del tema."
+      "content": "Banner principal a lo ancho: las dos fotos se van turnando. Si no cargás imágenes acá, usa las que están en los archivos del tema."
     },
     {
       "type": "image_picker",
       "id": "hero_img",
-      "label": "Foto del banner",
+      "label": "Banner 1",
       "info": "Apaisada. El texto va sobre el sector izquierdo, así que conviene que esa zona esté despejada."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_img_2",
+      "label": "Banner 2",
+      "info": "Los dos banners se van turnando cada 6 segundos."
     },
     {
       "type": "image_picker",
