@@ -134,7 +134,7 @@
     background:none;border:0;cursor:pointer;padding:8px;width:44px;height:44px;}
   .hamburger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;
     transition:transform .3s ease,opacity .3s ease;}
-  @media(max-width:960px){
+  @media(max-width:1060px){
     .topbar .logo{height:36px;}
     .hamburger{display:flex;}
     .topbar nav{
@@ -534,6 +534,7 @@
     <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     <nav id="topnav">
       <a href="#calidad">Calidad</a>
+      <a href="catalogo.html">Productos</a>
       <a href="#compra">Compra protegida</a>
       <a href="#inspileta">Inspileta</a>
       <a href="#donde-comprar">Dónde comprar</a>
@@ -753,38 +754,45 @@
           <span>Redonda · black PVD</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/tablas-de-acero" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="{{ 'acc-tabla-acero-cut.png' | asset_img_url: '900x' }}" alt="Tablas de acero" loading="lazy"></div>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/box-inox" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="{{ 'acc-box-inox.png' | asset_img_url: '900x' }}" alt="Box Inox" loading="lazy"></div>
         <div class="prod-body">
-          <b>Tablas de acero</b>
-          <span>Para 640, 660, 670 y 671</span>
+          <b>Box Inox</b>
+          <span>Organizador con escurridor y colador</span>
         </div>
       </a>
       <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/rejilla-flexible" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="{{ 'acc-rejilla.png' | asset_img_url: '900x' }}" alt="Rejilla flexible" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'acc-rejilla-flex.png' | asset_img_url: '900x' }}" alt="Rejilla flexible" loading="lazy"></div>
         <div class="prod-body">
           <b>Rejilla flexible</b>
-          <span>Protege el fondo de la cuba</span>
+          <span>Enrollable, protege el fondo</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/barra-escurridora-60" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="{{ 'acc-barra.png' | asset_img_url: '900x' }}" alt="Barra escurridora 60" loading="lazy"></div>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/cestos-escurridores" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="{{ 'acc-cesto-esc.png' | asset_img_url: '900x' }}" alt="Cestos escurridores" loading="lazy"></div>
         <div class="prod-body">
-          <b>Barra escurridora 60</b>
-          <span>Escurre sobre la pileta</span>
+          <b>Cestos escurridores</b>
+          <span>Acero satinado</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9000-copia" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="{{ 'acc-cesto.png' | asset_img_url: '900x' }}" alt="Cestillos 9000" loading="lazy"></div>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/cestos-escurridores" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="{{ 'acc-cesto-esc-rose.png' | asset_img_url: '900x' }}" alt="Cestos escurridores rose" loading="lazy"></div>
         <div class="prod-body">
-          <b>Cestillos 9000</b>
-          <span>Repuesto de desagüe</span>
+          <b>Cestos escurridores rose</b>
+          <span>Terminación rose PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/tablas-de-vidrio" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="{{ 'acc-tabla-vidrio.png' | asset_img_url: '900x' }}" alt="Tablas de vidrio" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Tablas de vidrio</b>
+          <span>Negra, para apoyar sobre la cuba</span>
         </div>
       </a>
     </div>
 
     <div class="center cta-row rv" style="margin-top:36px;">
-      <a class="btn btn-outline" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Ver el catálogo completo</a>
+      <a class="btn btn-metal" href="catalogo.html">Ver más productos</a>
     </div>
   </div>
 </section>
@@ -1058,7 +1066,7 @@
 
   /* el marquee necesita el contenido duplicado para que el loop no salte */
   var track = document.getElementById('strip-track');
-  track.innerHTML = track.innerHTML + track.innerHTML;
+  if(track) track.innerHTML = track.innerHTML + track.innerHTML;
 
   /* apariciones al scrollear */
   var io = new IntersectionObserver(function(entries){
@@ -1192,7 +1200,10 @@
 
   /* el hero arranca con las fotos apenas ampliadas y se asientan al cargar */
   requestAnimationFrame(function(){
-    setTimeout(function(){ document.querySelector('.hero').classList.add('on'); }, 60);
+    setTimeout(function(){
+      var h = document.querySelector('.hero');
+      if(h) h.classList.add('on');
+    }, 60);
   });
 })();
 

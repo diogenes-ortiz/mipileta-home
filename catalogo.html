@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mi Pileta — Acero inoxidable para cocina y baño</title>
-<meta name="description" content="Piletas de cocina y bachas de baño en acero inoxidable AISI 304. Líneas Essentia y Zíngara. Diseño y fabricación argentina, 10 años de garantía." />
+<title>Catálogo — Mi Pileta</title>
+<meta name="description" content="Catálogo de Mi Pileta: piletas de cocina Essentia, bachas de baño Zíngara y accesorios en acero inoxidable AISI 304." />
 <meta name="robots" content="noindex,nofollow" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -482,6 +482,29 @@
     .float-wsp{right:14px;bottom:calc(18px + env(safe-area-inset-bottom,0px));}
   }
 </style>
+<style>
+  /* la pagina de productos arranca abajo de la barra, sin banner */
+  .cat-page{padding-top:clamp(48px,7vw,80px);}
+  .cat-page-head{max-width:720px;}
+  .cat-page-head .title{margin-top:14px;}
+  .cat-page-head .lead{margin-top:18px;}
+  .cat-filtros--page{margin-top:34px;}
+  .cat-page .cat-grid{margin-top:26px;}
+  /* la entrada del menu en la que estamos parados */
+  .topbar nav a.is-aca{opacity:1;position:relative;}
+  .topbar nav a.is-aca::after{
+    content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--warm);
+  }
+  @media(max-width:1060px){ .topbar nav a.is-aca::after{display:none;} }
+  .cat-cierre{
+    margin-top:54px;display:flex;align-items:center;justify-content:space-between;
+    gap:28px;flex-wrap:wrap;
+    border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
+    padding:clamp(26px,4vw,44px);
+  }
+  .cat-cierre h3{font-family:"Raleway",sans-serif;font-weight:200;font-size:clamp(1.4rem,2.6vw,2rem);}
+  .cat-cierre p{margin:10px 0 0;color:var(--muted);font-weight:300;max-width:52ch;}
+</style>
 </head>
 <body>
 
@@ -534,170 +557,35 @@
 <!-- ============ NAV ============ -->
 <header class="topbar" id="topbar">
   <div class="container inner">
-    <a href="#top" aria-label="Mi Pileta"><img class="logo" src="assets/logo-blanco.png" alt="Mi Pileta"></a>
+    <a href="index.html" aria-label="Mi Pileta"><img class="logo" src="assets/logo-blanco.png" alt="Mi Pileta"></a>
     <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     <nav id="topnav">
-      <a href="#calidad">Calidad</a>
-      <a href="catalogo.html">Productos</a>
-      <a href="#compra">Compra protegida</a>
-      <a href="#inspileta">Inspileta</a>
-      <a href="#donde-comprar">Dónde comprar</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html#calidad">Calidad</a>
+      <a href="catalogo.html" aria-current="page" class="is-aca">Productos</a>
+      <a href="index.html#compra">Compra protegida</a>
+      <a href="index.html#inspileta">Inspileta</a>
+      <a href="index.html#donde-comprar">Dónde comprar</a>
+      <a href="index.html#contacto">Contacto</a>
       <a class="nav-shop" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Catálogo online</a>
     </nav>
   </div>
 </header>
 
-<!-- ============ HERO: BANNER ============ -->
-<section class="hero" id="top">
-  <div class="hero-slides" aria-hidden="true">
-    <div class="hero-slide hero-slide--1 is-on"></div>
-    <div class="hero-slide hero-slide--2"></div>
-  </div>
-  <div class="hero-copy">
-    <div class="container">
-      <h1>Tu cocina se merece<br>la <em>mejor pileta</em></h1>
-      <p class="sub">Con 10 años de garantía.</p>
-      <div class="cta-row">
-        <a class="btn btn-metal" href="#lineas">Conocé las líneas</a>
-        <a class="btn btn-outline" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Catálogo online</a>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-hint"></div>
-</section>
-
-<!-- ============ PILARES (marquee) ============ -->
-<div class="strip" aria-hidden="true">
-  <div class="strip-track" id="strip-track">
-    <span>Acero inoxidable AISI 304 18/8</span>
-    <span>10 años de garantía</span>
-    <span>Terminación PVD</span>
-    <span>Diseño y fabricación nacional</span>
-    <span>Envíos a todo el país</span>
-    <span>Compra protegida</span>
-  </div>
-</div>
-
-<!-- ============ LAS LÍNEAS ============ -->
-<section class="section" id="lineas">
+<!-- ============ CATÁLOGO (página propia) ============ -->
+<section class="section cat-page">
   <div class="container">
-    <div class="center rv">
-      <p class="eyebrow">Nuestras líneas</p>
-      <h2 class="title">Cada ambiente, <strong>su línea</strong></h2>
-      <p class="lead" style="margin-top:16px;">
-        Todas nacen del mismo acero y de la misma obsesión por el detalle.
-        Cambia el ambiente, el gesto y la terminación. Elegí por dónde empezar.
-      </p>
+    <div class="cat-page-head rv">
+      <p class="eyebrow">Catálogo</p>
+      <h1 class="title">Todos los <strong>productos</strong></h1>
+      <p class="lead">Piletas de cocina, bachas de baño y los accesorios que las completan.
+         Todo en acero inoxidable AISI&nbsp;304, con 10 años de garantía.</p>
     </div>
 
-    <div class="lineas-grid">
-      <!-- ESSENTIA -->
-      <a class="linea rv" href="https://diogenes-ortiz.github.io/essentia-mipileta/" target="_blank" rel="noopener">
-        <div class="linea-media">
-          <img src="assets/familia-essentia-3.jpg" alt="Familia de piletas Essentia">
-          <span class="linea-badge">Cocina</span>
-          <span class="linea-name">Essentia</span>
-        </div>
-        <div class="linea-body">
-          <p>La línea de piletas de cocina. Bajo y sobre mesada, en acero satinado,
-             negro y rose PVD, con accesorios que las completan.</p>
-          <div class="chips">
-            <span class="chip">640 · 660 · 670 · 671</span>
-            <span class="chip">Satinado</span>
-            <span class="chip">Black</span>
-            <span class="chip">Rose</span>
-          </div>
-          <span class="linea-go">Ver la línea <span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- ZÍNGARA -->
-      <a class="linea rv" href="https://diogenes-ortiz.github.io/zingara-mipileta/" target="_blank" rel="noopener">
-        <div class="linea-media">
-          <img src="assets/zingara-hero-cobre.png" alt="Bacha de baño Zíngara">
-          <span class="linea-badge">Baño</span>
-          <span class="linea-name">Zíngara</span>
-        </div>
-        <div class="linea-body">
-          <p>Lavatorios de apoyo para baño en acero AISI 304 de 1,2&nbsp;mm de espesor.
-             Cuadrada, redonda y oval, con terminación PVD.</p>
-          <div class="chips">
-            <span class="chip">938 · 940 · Curve</span>
-            <span class="chip">Gold</span>
-            <span class="chip">Black</span>
-            <span class="chip">Rose</span>
-          </div>
-          <span class="linea-go">Ver la línea <span class="arrow">→</span></span>
-        </div>
-      </a>
-
-      <!-- ACCESORIOS -->
-      <a class="linea linea--wide rv" href="https://mipileta.com.ar/products/tablas-de-acero" target="_blank" rel="noopener">
-        <div class="linea-media">
-          <img src="assets/ess-lifestyle.jpg" alt="Tabla de acero inoxidable sobre la pileta">
-          <span class="linea-badge">Complementos</span>
-        </div>
-        <div class="linea-body">
-          <span class="linea-name">Tablas y accesorios</span>
-          <p>Tablas de acero y de madera, escurridores, cestos y dosificadores.
-             Piezas pensadas a la medida de cada pileta, para que la mesada
-             trabaje como una sola cosa.</p>
-          <div class="chips">
-            <span class="chip">Tablas de acero</span>
-            <span class="chip">Escurridores</span>
-            <span class="chip">Cestos</span>
-            <span class="chip">Dosificadores</span>
-          </div>
-          <span class="linea-go">Ver accesorios <span class="arrow">→</span></span>
-        </div>
-      </a>
-    </div>
-
-    <div class="extras-head rv"><span>También hacemos</span></div>
-    <div class="extras">
-      <a class="extra rv" href="https://mipileta.com.ar/search?q=lavadero" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M4 10h16v6a4 4 0 01-4 4H8a4 4 0 01-4-4z"/><path d="M8 10V6.5A2.5 2.5 0 0113 6"/></svg>
-        <div>
-          <b>Lavadero</b>
-          <p>Piletas de lavadero simples y con escurridor. El mismo acero, para el uso más bravo de la casa.</p>
-          <span class="linea-go">Ver lavaderos <span class="arrow">→</span></span>
-        </div>
-      </a>
-      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Piletones" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><rect x="3" y="8" width="8" height="11" rx="1.6"/><rect x="13" y="8" width="8" height="11" rx="1.6"/><path d="M7 8V5M17 8V5"/></svg>
-        <div>
-          <b>Piletones</b>
-          <p>Para gastronomía, industria y espacios de trabajo, donde la pileta labura todo el día.</p>
-          <span class="linea-go">Ver piletones <span class="arrow">→</span></span>
-        </div>
-      </a>
-      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Repuestos" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 3l7.4 4.3v8.4L12 21l-7.4-5.3V7.3z"/><circle cx="12" cy="12" r="3.1"/></svg>
-        <div>
-          <b>Repuestos</b>
-          <p>Sifones, desagües, cestillos y válvulas. Lo que hace que una pileta siga siendo la de siempre.</p>
-          <span class="linea-go">Ver repuestos <span class="arrow">→</span></span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CATÁLOGO ============ -->
-<section class="section" id="catalogo" style="padding-top:0;">
-  <div class="container">
-    <div class="cat-head rv">
-      <div>
-        <p class="eyebrow">Catálogo</p>
-        <h2 class="title">Elegí <strong>tu modelo</strong></h2>
-      </div>
-      <div class="cat-filtros" role="group" aria-label="Filtrar por ambiente">
-        <button class="cat-filtro on" data-f="todo" type="button">Todo</button>
-        <button class="cat-filtro" data-f="cocina" type="button">Cocina</button>
-        <button class="cat-filtro" data-f="bano" type="button">Baño</button>
-        <button class="cat-filtro" data-f="acc" type="button">Accesorios</button>
-      </div>
+    <div class="cat-filtros cat-filtros--page rv" role="group" aria-label="Filtrar por categoría">
+      <button class="cat-filtro on" data-f="todo" type="button">Todo</button>
+      <button class="cat-filtro" data-f="cocina" type="button">Cocina</button>
+      <button class="cat-filtro" data-f="bano" type="button">Baño</button>
+      <button class="cat-filtro" data-f="acc" type="button">Accesorios</button>
     </div>
 
     <div class="cat-grid" id="cat-grid">
@@ -822,208 +710,15 @@
       </a>
     </div>
 
-    <div class="center cta-row rv" style="margin-top:36px;">
-      <a class="btn btn-metal" href="catalogo.html">Ver más productos</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LA MARCA (franja clara) ============ -->
-<section class="section paper" id="calidad">
-  <div class="container marca-grid">
-    <div class="marca-txt rv">
-      <p class="eyebrow">Calidad</p>
-      <h2>Todo empieza<br>por la <strong>calidad</strong></h2>
-      <p>Para nosotros la calidad no es una promesa de folleto: es acero inoxidable
-         AISI 304 18/8, resistente, higiénico, reciclable y hecho para permanecer en el tiempo.</p>
-      <p>Desarrollamos cada modelo puertas adentro —diseño, matricería y terminación—
-         para que lo que llega a tu cocina o a tu baño tenga el mismo estándar que
-         le exigimos a nuestra propia casa. Por eso cada pileta sale con 10 años de garantía.</p>
-      <div class="cta-row" style="margin-top:26px;">
-        <a class="btn btn-ink" href="https://mipileta.com.ar/pages/nuestra-historia" target="_blank" rel="noopener">Conocer nuestra historia</a>
+    <div class="cat-cierre rv">
+      <div>
+        <h3>¿Necesitás una mano para elegir?</h3>
+        <p>Contanos qué mesada tenés y te decimos qué modelo entra y con qué accesorios se lleva bien.</p>
       </div>
-
-      <div class="facts">
-        <div class="fact">
-          <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.2-2.9 7.7-7 9-4.1-1.3-7-4.8-7-9V6l7-3z"/></svg>
-          <b>AISI 304 18/8</b><span>El acero que no se negocia</span>
-        </div>
-        <div class="fact">
-          <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" /><circle cx="12" cy="12" r="8"/></svg>
-          <b>Terminación PVD</b><span>Color que es parte del acero</span>
-        </div>
-        <div class="fact">
-          <svg viewBox="0 0 24 24"><path d="M4 15c2-3 4-3 6 0s4 3 6 0 2-3 4 0"/><path d="M4 9c2-3 4-3 6 0s4 3 6 0 2-3 4 0"/></svg>
-          <b>Insonorización</b><span>Menos ruido, menos vibración</span>
-        </div>
-        <div class="fact">
-          <svg viewBox="0 0 24 24"><path d="M7 7h10l-2.5 4M17 17H7l2.5-4"/><path d="M5 12a7 7 0 0114 0"/></svg>
-          <b>100% reciclable</b><span>Dura, y después vuelve a empezar</span>
-        </div>
+      <div class="cta-row">
+        <a class="btn btn-metal" href="https://wa.me/5491128563001" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+        <a class="btn btn-outline" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Comprar online</a>
       </div>
-    </div>
-
-    <div class="marca-foto rv">
-      <img src="assets/home-marca.jpg" alt="Pileta de acero inoxidable Mi Pileta en una cocina">
-    </div>
-  </div>
-</section>
-
-<!-- ============ COMPRA PROTEGIDA ============ -->
-<section class="section" id="compra">
-  <div class="container">
-    <div class="center rv">
-      <p class="eyebrow">Compra protegida</p>
-      <h2 class="title">Comprá <strong>tranquilo</strong></h2>
-      <p class="lead" style="margin-top:16px;">
-        Todo lo que hay detrás de la compra: garantía real, medios de pago seguros
-        y envíos a todo el país.
-      </p>
-    </div>
-    <div class="cards4">
-      <div class="card rv">
-        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.2-2.9 7.7-7 9-4.1-1.3-7-4.8-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-        <b>10 años de garantía</b>
-        <p>Cobertura sobre el acero y la fabricación de cada pileta.</p>
-      </div>
-      <div class="card rv">
-        <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
-        <b>Pago seguro</b>
-        <p>Tarjetas, transferencia y Mercado Pago en cuotas.</p>
-      </div>
-      <div class="card rv">
-        <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
-        <b>Envíos a todo el país</b>
-        <p>Despacho desde fábrica con seguimiento del pedido.</p>
-      </div>
-      <div class="card rv">
-        <svg viewBox="0 0 24 24"><path d="M4 9a8 8 0 0114-4"/><path d="M20 15a8 8 0 01-14 4"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
-        <b>Cambios y devoluciones</b>
-        <p>Si algo no encaja, lo resolvemos con vos.</p>
-      </div>
-    </div>
-    <div class="center cta-row rv" style="margin-top:36px;">
-      <a class="btn btn-outline" href="https://mipileta.com.ar/pages/garantia" target="_blank" rel="noopener">Ver la política de garantía</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INSPILETA ============ -->
-<section class="section" id="inspileta" style="padding-top:0;">
-  <div class="container">
-    <div class="center rv">
-      <p class="eyebrow">Inspileta</p>
-      <h2 class="title">Ideas para <strong>tu espacio</strong></h2>
-    </div>
-    <div class="posts">
-      <a class="post rv" href="https://mipileta.com.ar/blogs/blog/como-elegir-la-pileta-ideal-segun-el-estilo-de-tu-cocina" target="_blank" rel="noopener">
-        <div class="post-media"><img src="assets/home-post-cocina.jpg" alt=""></div>
-        <div class="post-body">
-          <span>Cocina</span>
-          <h3>Cómo elegir la pileta ideal según el estilo de tu cocina</h3>
-        </div>
-      </a>
-      <a class="post rv" href="https://mipileta.com.ar/blogs/blog/por-que-incorporar-una-tabla-de-acero-inoxidable-en-tu-cocina" target="_blank" rel="noopener">
-        <div class="post-media"><img src="assets/home-post-tabla.jpg" alt=""></div>
-        <div class="post-body">
-          <span>Accesorios</span>
-          <h3>¿Por qué incorporar una tabla de acero inoxidable en tu cocina?</h3>
-        </div>
-      </a>
-      <a class="post rv" href="https://mipileta.com.ar/blogs/blog/farmhouse-aesthetic-style-calidez-moderna-en-la-cocina" target="_blank" rel="noopener">
-        <div class="post-media"><img src="assets/zingara-hero.png" alt=""></div>
-        <div class="post-body">
-          <span>Baño</span>
-          <h3>5 claves para elevar el diseño de tu baño</h3>
-        </div>
-      </a>
-    </div>
-    <div class="center cta-row rv" style="margin-top:36px;">
-      <a class="btn btn-outline" href="https://mipileta.com.ar/blogs/blog" target="_blank" rel="noopener">Ver todas las notas</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DÓNDE COMPRAR ============ -->
-<section class="section" id="donde-comprar" style="padding-top:0;">
-  <div class="container">
-    <div class="center rv">
-      <p class="eyebrow">Dónde comprar</p>
-      <h2 class="title">Tu punto de venta <strong>más cercano</strong></h2>
-    </div>
-
-    <div class="locator rv" id="locator">
-      <div class="loc-side">
-        <h3 class="loc-title">¿Dónde la consigo?</h3>
-        <p class="loc-sub">Escribí tu zona o barrio y te mostramos los distribuidores que la tienen.</p>
-        <form class="loc-form" id="loc-form" autocomplete="off">
-          <input id="loc-q" type="text" placeholder="Ej: Palermo, Belgrano, Caballito…" aria-label="Tu zona o barrio">
-          <button type="submit" class="btn btn-metal loc-go">Buscar</button>
-        </form>
-        <div class="loc-results" id="loc-results">
-          <p class="loc-hint">Escribí tu zona para ver los puntos de venta más cercanos.</p>
-        </div>
-      </div>
-      <div class="loc-map" id="loc-map">
-        <svg class="loc-streets" viewBox="0 0 600 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="600" height="520" fill="none"/>
-          <g stroke="#2a2a2a" stroke-width="2" fill="none">
-            <path d="M0 90 H600 M0 200 H600 M0 320 H600 M0 430 H600"/>
-            <path d="M110 0 V520 M250 0 V520 M380 0 V520 M500 0 V520"/>
-          </g>
-          <g stroke="#222" stroke-width="6" fill="none" opacity=".8">
-            <path d="M-20 380 L200 250 L360 300 L620 150"/>
-            <path d="M60 -20 L180 180 L150 400 L300 540"/>
-          </g>
-        </svg>
-        <div class="loc-pins" id="loc-pins"></div>
-        <div class="loc-map-empty" id="loc-map-empty">Mapa de distribuidores</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACTO ============ -->
-<section class="section" id="contacto" style="padding-top:0;">
-  <div class="container">
-    <div class="contacto rv">
-      <p class="eyebrow">Contacto</p>
-      <h2>¿Te ayudamos a elegir?</h2>
-      <p class="lead" style="margin:16px auto 0;">
-        Contanos qué mesada tenés y qué uso le vas a dar. Te recomendamos el modelo,
-        la terminación y el accesorio que mejor le calzan.
-      </p>
-      <div class="cta-row" style="margin-top:28px;justify-content:center;">
-        <a class="btn btn-metal" id="cta-wsp" href="https://wa.me/5491128563001" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
-        <a class="btn btn-outline" href="https://maps.app.goo.gl/zuQQb5c9BZMmMpUT8" target="_blank" rel="noopener">Cómo llegar</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEWSLETTER ============ -->
-<section class="section" id="newsletter" style="padding-top:0;">
-  <div class="container">
-    <div class="news rv">
-      <p class="eyebrow">Newsletter</p>
-      <h2>Novedades, lanzamientos<br>y algo de oficio</h2>
-      <p class="lead">Contanos desde dónde nos leés y te mandamos lo que te sirve:
-         fichas técnicas y planos si trabajás con esto, ideas y lanzamientos si estás
-         armando tu casa. Sin spam, y te podés borrar cuando quieras.</p>
-
-      <form class="news-form" id="news-form" novalidate>
-        <div class="news-perfiles" role="radiogroup" aria-label="¿Desde dónde nos leés?">
-          <label class="perfil"><input type="radio" name="perfil" value="Arquitecto/a"><span>Arquitecto/a</span></label>
-          <label class="perfil"><input type="radio" name="perfil" value="Diseño de interiores"><span>Diseño de interiores</span></label>
-          <label class="perfil"><input type="radio" name="perfil" value="Creador de contenido"><span>Creador de contenido</span></label>
-          <label class="perfil"><input type="radio" name="perfil" value="Para mi casa"><span>Para mi casa</span></label>
-        </div>
-        <div class="news-row">
-          <input id="news-email" type="email" name="email" placeholder="Tu email" aria-label="Tu email">
-          <button class="btn btn-metal" type="submit">Suscribirme</button>
-        </div>
-        <p class="news-msg" id="news-msg" role="status"></p>
-      </form>
     </div>
   </div>
 </section>
