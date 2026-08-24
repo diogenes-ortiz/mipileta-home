@@ -233,17 +233,8 @@
     border-bottom:1px solid rgba(20,24,30,.28);padding-bottom:4px;
   }
   .linea:hover .linea-go .arrow{transform:translateX(6px);}
-  /* la tercera es ancha: accesorios no es una línea, es lo que la completa */
-  .linea--wide{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;}
-  .linea--wide .linea-media{aspect-ratio:auto;min-height:290px;}
-  .linea--wide .linea-body{display:flex;flex-direction:column;justify-content:center;padding:36px 40px;}
-  .linea--wide .linea-name{position:static;display:block;margin-bottom:12px;font-size:clamp(1.4rem,2.2vw,1.8rem);
-    background:none;-webkit-text-fill-color:currentColor;color:var(--ink);}
   @media(max-width:860px){
     .lineas-grid{grid-template-columns:1fr;}
-    .linea--wide{grid-template-columns:1fr;}
-    .linea--wide .linea-media{min-height:220px;aspect-ratio:16/10;}
-    .linea--wide .linea-body{padding:24px 26px 28px;}
   }
 
   /* ---------- categorias que no son "linea" pero tienen que estar ---------- */
