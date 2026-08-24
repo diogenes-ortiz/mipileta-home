@@ -283,7 +283,7 @@
   .extras-head{display:flex;align-items:center;gap:18px;margin:46px 0 18px;}
   .extras-head::before,.extras-head::after{content:"";flex:1;height:1px;background:var(--line);}
   .extras-head span{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#6b7178;}
-  .extras{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .extras{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
   .extra{
     display:flex;gap:16px;align-items:stretch;
     background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 24px;
@@ -297,28 +297,16 @@
   .extra b{display:block;font-size:1rem;font-weight:700;}
   .extra p{margin:5px 0 0;color:var(--muted);font-size:.87rem;font-weight:300;}
   .extra .linea-go{margin-top:auto;padding-top:16px;font-size:.78rem;align-self:flex-start;}
-  @media(max-width:860px){.extras{grid-template-columns:1fr;}}
-
-  /* ---------- otras lineas de la marca ("Conocé también") ---------- */
-  /* pastillas oscuras sobre fondo claro; en el original iban al reves porque
-     venian de una seccion negra */
-  .otras{margin-top:44px;padding-top:34px;border-top:1px solid var(--line);}
-  .otras-head{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
-    color:#6b7178;text-align:center;margin:0 0 26px;}
-  .otras-grupos{display:flex;flex-direction:column;gap:20px;align-items:center;}
-  .otras-grupo{width:100%;max-width:620px;}
-  .otras-label{color:var(--muted);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-    margin:0 0 11px;text-align:center;}
-  .otras-links{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
-  .otra{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:9px 18px;border:1px solid var(--line);border-radius:99px;background:#fff;
-    color:var(--ink);font-size:.85rem;white-space:nowrap;
-    transition:background .3s ease,color .3s ease,border-color .3s ease;
+  /* las lineas de cocina, adentro de su card: cada nombre es un link */
+  /* separados por un punto medio: en flex quedaban pegados al cortar renglon */
+  .extra-lineas{margin:10px 0 0;font-size:.83rem;line-height:1.95;color:#b9b9b3;}
+  .extra-lineas a{
+    color:var(--muted);border-bottom:1px solid transparent;
+    transition:color .25s ease,border-color .25s ease;
   }
-  .otra:hover{background:var(--ink);border-color:var(--ink);color:#fff;}
-  /* en pantallas tactiles el hover no existe: se asegura el area de toque */
-  @media (hover:none){ .otra{min-height:44px;} }
+  .extra-lineas a:hover{color:var(--ink);border-bottom-color:var(--ink);}
+  @media(max-width:1120px){.extras{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.extras{grid-template-columns:1fr;}}
 
   /* ---------- catalogo ---------- */
   /* las fotos de producto vienen sobre negro o recortadas, asi que las cajas
@@ -629,7 +617,15 @@
 
     <div class="extras-head rv"><span>También hacemos</span></div>
     <div class="extras">
-      <a class="extra rv" href="https://mipileta.com.ar/search?q=lavadero" target="_blank" rel="noopener">
+      <div class="extra rv">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="8" height="6" rx="1.5"/><rect x="13" y="14" width="8" height="6" rx="1.5"/></svg>
+        <div>
+          <b>Más de cocina</b>
+          <p>El resto de las líneas de pileta, de la más equipada a la más simple.</p>
+          <p class="extra-lineas"><a href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Vesta+Collection" target="_blank" rel="noopener">Vesta</a> · <a href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Nova+collection" target="_blank" rel="noopener">Nova</a> · <a href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Designia+Collection" target="_blank" rel="noopener">Designia</a> · <a href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Etna+Collection" target="_blank" rel="noopener">Etna</a> · <a href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=L%C3%ADnea+Econ%C3%B3mica" target="_blank" rel="noopener">Línea Económica</a></p>
+        </div>
+      </div>
+      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.vendor=Lavadero" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M4 10h16v6a4 4 0 01-4 4H8a4 4 0 01-4-4z"/><path d="M8 10V6.5A2.5 2.5 0 0113 6"/></svg>
         <div>
           <b>Lavadero</b>
@@ -637,7 +633,7 @@
           <span class="linea-go">Ver lavaderos <span class="arrow">→</span></span>
         </div>
       </a>
-      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Piletones" target="_blank" rel="noopener">
+      <a class="extra rv" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.vendor=Piletones" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><rect x="3" y="8" width="8" height="11" rx="1.6"/><rect x="13" y="8" width="8" height="11" rx="1.6"/><path d="M7 8V5M17 8V5"/></svg>
         <div>
           <b>Piletones</b>
@@ -653,40 +649,6 @@
           <span class="linea-go">Ver repuestos <span class="arrow">→</span></span>
         </div>
       </a>
-    </div>
-
-    <!-- todas las líneas de la marca. Ojo: en Shopify no son colecciones sino
-         valores de product_type, por eso se enlazan filtrando "todos los productos".
-         Si en la tienda renombran una línea, el filtro deja de matchear y el link
-         abre vacío, sin dar error. -->
-    <div class="otras rv">
-      <p class="otras-head">Conocé también</p>
-      <div class="otras-grupos">
-        <div class="otras-grupo">
-          <p class="otras-label">Cocina</p>
-          <div class="otras-links">
-            <a class="otra" href="https://mipileta.com.ar/collections/essentia" target="_blank" rel="noopener">Essentia</a>
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Vesta+Collection" target="_blank" rel="noopener">Vesta</a>
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Nova+collection" target="_blank" rel="noopener">Nova</a>
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Designia+Collection" target="_blank" rel="noopener">Designia</a>
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=Etna+Collection" target="_blank" rel="noopener">Etna</a>
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.product_type=L%C3%ADnea+Econ%C3%B3mica" target="_blank" rel="noopener">Línea Económica</a>
-          </div>
-        </div>
-        <div class="otras-grupo">
-          <p class="otras-label">Baño</p>
-          <div class="otras-links">
-            <a class="otra" href="https://diogenes-ortiz.github.io/zingara-mipileta/" target="_blank" rel="noopener">Zíngara</a>
-          </div>
-        </div>
-        <div class="otras-grupo">
-          <p class="otras-label">Lavadero</p>
-          <div class="otras-links">
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.vendor=Lavadero" target="_blank" rel="noopener">Lavadero</a>
-            <a class="otra" href="https://mipileta.com.ar/collections/todos-los-productos?filter.p.vendor=Piletones" target="_blank" rel="noopener">Piletones</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>

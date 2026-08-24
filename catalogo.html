@@ -243,7 +243,7 @@
   .extras-head{display:flex;align-items:center;gap:18px;margin:46px 0 18px;}
   .extras-head::before,.extras-head::after{content:"";flex:1;height:1px;background:var(--line);}
   .extras-head span{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#6b7178;}
-  .extras{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .extras{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
   .extra{
     display:flex;gap:16px;align-items:stretch;
     background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 24px;
@@ -257,28 +257,16 @@
   .extra b{display:block;font-size:1rem;font-weight:700;}
   .extra p{margin:5px 0 0;color:var(--muted);font-size:.87rem;font-weight:300;}
   .extra .linea-go{margin-top:auto;padding-top:16px;font-size:.78rem;align-self:flex-start;}
-  @media(max-width:860px){.extras{grid-template-columns:1fr;}}
-
-  /* ---------- otras lineas de la marca ("Conocé también") ---------- */
-  /* pastillas oscuras sobre fondo claro; en el original iban al reves porque
-     venian de una seccion negra */
-  .otras{margin-top:44px;padding-top:34px;border-top:1px solid var(--line);}
-  .otras-head{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
-    color:#6b7178;text-align:center;margin:0 0 26px;}
-  .otras-grupos{display:flex;flex-direction:column;gap:20px;align-items:center;}
-  .otras-grupo{width:100%;max-width:620px;}
-  .otras-label{color:var(--muted);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-    margin:0 0 11px;text-align:center;}
-  .otras-links{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
-  .otra{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:9px 18px;border:1px solid var(--line);border-radius:99px;background:#fff;
-    color:var(--ink);font-size:.85rem;white-space:nowrap;
-    transition:background .3s ease,color .3s ease,border-color .3s ease;
+  /* las lineas de cocina, adentro de su card: cada nombre es un link */
+  /* separados por un punto medio: en flex quedaban pegados al cortar renglon */
+  .extra-lineas{margin:10px 0 0;font-size:.83rem;line-height:1.95;color:#b9b9b3;}
+  .extra-lineas a{
+    color:var(--muted);border-bottom:1px solid transparent;
+    transition:color .25s ease,border-color .25s ease;
   }
-  .otra:hover{background:var(--ink);border-color:var(--ink);color:#fff;}
-  /* en pantallas tactiles el hover no existe: se asegura el area de toque */
-  @media (hover:none){ .otra{min-height:44px;} }
+  .extra-lineas a:hover{color:var(--ink);border-bottom-color:var(--ink);}
+  @media(max-width:1120px){.extras{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.extras{grid-template-columns:1fr;}}
 
   /* ---------- catalogo ---------- */
   /* las fotos de producto vienen sobre negro o recortadas, asi que las cajas
