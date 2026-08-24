@@ -34,19 +34,19 @@
   {%- assign img_marca_img = 'home-calidad.jpg' | asset_img_url: '1400x' -%}
 {%- endif -%}
 {%- if section.settings.p1_img != blank -%}
-  {%- assign img_p1_img = section.settings.p1_img | image_url: width: 900 -%}
+  {%- assign img_p1_img = section.settings.p1_img | image_url: width: 1100 -%}
 {%- else -%}
-  {%- assign img_p1_img = 'home-post-cocina.jpg' | asset_img_url: '900x' -%}
+  {%- assign img_p1_img = 'essentia-hero-trio.jpg' | asset_img_url: '1100x' -%}
 {%- endif -%}
 {%- if section.settings.p2_img != blank -%}
-  {%- assign img_p2_img = section.settings.p2_img | image_url: width: 900 -%}
+  {%- assign img_p2_img = section.settings.p2_img | image_url: width: 1100 -%}
 {%- else -%}
-  {%- assign img_p2_img = 'home-post-tabla.jpg' | asset_img_url: '900x' -%}
+  {%- assign img_p2_img = 'home-post-teasing.png' | asset_img_url: '1100x' -%}
 {%- endif -%}
 {%- if section.settings.p3_img != blank -%}
-  {%- assign img_p3_img = section.settings.p3_img | image_url: width: 900 -%}
+  {%- assign img_p3_img = section.settings.p3_img | image_url: width: 1100 -%}
 {%- else -%}
-  {%- assign img_p3_img = 'zingara-hero.png' | asset_img_url: '900x' -%}
+  {%- assign img_p3_img = 'zingara-espesor.png' | asset_img_url: '1100x' -%}
 {%- endif -%}
 
 <style>
@@ -136,7 +136,7 @@
     background:none;border:0;cursor:pointer;padding:8px;width:44px;height:44px;}
   .hamburger span{display:block;width:26px;height:2px;background:var(--ink);border-radius:2px;
     transition:transform .3s ease,opacity .3s ease;}
-  @media(max-width:1060px){
+  @media(max-width:960px){
     .topbar .logo{height:36px;}
     .hamburger{display:flex;}
     .topbar nav{
@@ -377,10 +377,11 @@
   .post{border-radius:22px;overflow:hidden;background:var(--card);border:1px solid var(--line);
     transition:border-color .35s ease,transform .5s cubic-bezier(.22,.61,.36,1);}
   .post:hover{border-color:#c9c9c4;transform:translateY(-4px);}
-  .post-media{aspect-ratio:16/10;overflow:hidden;background:var(--dark);}
-  .post-media img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.88);
+  /* 16/9 = el mismo formato que traen las fotos, asi entran casi sin recorte */
+  .post-media{aspect-ratio:16/9;overflow:hidden;background:#000;}
+  .post-media img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.96);
     transition:transform 1s cubic-bezier(.22,.61,.36,1),filter .5s;}
-  .post:hover .post-media img{transform:scale(1.05);filter:brightness(1);}
+  .post:hover .post-media img{transform:scale(1.04);filter:brightness(1.06);}
   .post-body{padding:20px 22px 24px;}
   .post-body span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);}
   .post-body h3{font-size:1.05rem;font-weight:400;line-height:1.35;margin-top:10px;}
@@ -534,7 +535,6 @@
       <a href="catalogo.html">Productos</a>
       <a href="#compra">Compra protegida</a>
       <a href="#inspileta">Inspileta</a>
-      <a href="#donde-comprar">Dónde comprar</a>
       <a href="#contacto">Contacto</a>
       <a class="nav-shop" href="{{ section.settings.nav_shop_url | default: '/collections/todos-los-productos' }}">{{ section.settings.nav_shop_label }}</a>
     </nav>
@@ -886,7 +886,9 @@
   </div>
 </section>
 
-<!-- ============ DÓNDE COMPRAR ============ -->
+<!-- ============ DÓNDE COMPRAR (OCULTA por ahora — los distribuidores son demo) ====
+     Para volver a mostrarla: sacar este comentario y devolver el item al menú.
+<!-- ============ DÓNDE COMPRAR ============ -‑>
 <section class="section" id="donde-comprar" style="padding-top:0;">
   <div class="container">
     <div class="center rv">
@@ -924,6 +926,9 @@
     </div>
   </div>
 </section>
+
+
+==== fin de Dónde comprar ============ -->
 
 <!-- ============ CONTACTO ============ -->
 <section class="section" id="contacto" style="padding-top:0;">
