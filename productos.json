@@ -1,0 +1,871 @@
+{
+ "total": 120,
+ "ambientes": [
+  {
+   "slug": "cocina",
+   "label": "Cocina"
+  },
+  {
+   "slug": "bano",
+   "label": "Baño"
+  },
+  {
+   "slug": "lavadero",
+   "label": "Lavadero"
+  },
+  {
+   "slug": "piletones",
+   "label": "Piletones"
+  },
+  {
+   "slug": "accesorios",
+   "label": "Accesorios"
+  },
+  {
+   "slug": "repuestos",
+   "label": "Repuestos"
+  }
+ ],
+ "productos": [
+  {
+   "t": "Tablas de acero",
+   "h": "tablas-de-acero",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/MIPILETA.jpg?v=1780044166"
+  },
+  {
+   "t": "Rejilla Flexible",
+   "h": "rejilla-flexible",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/RejillaFlexibleMelid.png?v=1772800870"
+  },
+  {
+   "t": "Vesta simple 410",
+   "h": "vesta-simple-410",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/410Melia.png?v=1768413601"
+  },
+  {
+   "t": "Vesta Simple 302",
+   "h": "vesta-simple-302",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/302Melia.png?v=1765995580"
+  },
+  {
+   "t": "Piletones Simples",
+   "h": "piletones-simples",
+   "l": "Piletones",
+   "c": "piletones",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/PiletonMelic.png?v=1765766683"
+  },
+  {
+   "t": "Barra escurridora 60",
+   "h": "barra-escurridora-60",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS60Melia_f68c5f96-2179-44fc-946b-fe04f3e7934e.png?v=1765565650"
+  },
+  {
+   "t": "Aro Doble",
+   "h": "aro-doble",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Aro-simple-Meli-a.png?v=1765315970"
+  },
+  {
+   "t": "Aro simple",
+   "h": "aro-simple",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Aro-simple-Meli-a.png?v=1765315970"
+  },
+  {
+   "t": "Grampas",
+   "h": "grampas",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Grampas-Meli-a.png?v=1765315852"
+  },
+  {
+   "t": "ART. SIFÓN",
+   "h": "art-sifon",
+   "l": "Repuestos",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/accesorio_sifon_mi_pileta.jpg?v=1765315595"
+  },
+  {
+   "t": "Desagüe de una sola pieza 9007",
+   "h": "desague-de-una-sola-pieza-9007",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9007-Meil-a.png?v=1765315455"
+  },
+  {
+   "t": "Desagüe línea económica 9001",
+   "h": "desague-americano-sin-desborde-9006",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9001-Meli-c-700x700.png?v=1765315378"
+  },
+  {
+   "t": "Cestillos 9000",
+   "h": "desague-de-una-sola-pieza-9000-copia",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/accesorio_9000_mi_pileta.jpg?v=1765314963"
+  },
+  {
+   "t": "Desagüe de una sola pieza 9003",
+   "h": "desague-de-una-sola-pieza-9003",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/accesorio_9003_mi_pileta-1.jpg?v=1765314896"
+  },
+  {
+   "t": "Desagüe americano Black 9006",
+   "h": "desague-americano-black-9006",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9006-con-desborde-black-Meli-b.png?v=1765314784"
+  },
+  {
+   "t": "Desagüe americano 9006",
+   "h": "desague-americano",
+   "l": "Accesorios",
+   "c": "repuestos",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9006-con-desborde-Meli-a.png?v=1765314686"
+  },
+  {
+   "t": "Tablas de madera",
+   "h": "tablas-de-madera",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Tabla-de-madera-meli-c-8020-150x150.png?v=1765314623"
+  },
+  {
+   "t": "Box Inox",
+   "h": "box-inox",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Box-Inox-Meli-b-800x800.png?v=1765312345"
+  },
+  {
+   "t": "Cestos escurridores",
+   "h": "cestos-escurridores",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Cestos-conjunto-Meli-a-1.png?v=1765310700"
+  },
+  {
+   "t": "Dosificador 1004",
+   "h": "dosificador-1004",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1004Melib.png?v=1765309406"
+  },
+  {
+   "t": "Dosificador 1000 Black",
+   "h": "dosificador-1000-black",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1000BMelia.png?v=1765309785"
+  },
+  {
+   "t": "Dosificador 1000",
+   "h": "dosificador-1000",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1000Melia_5f7fa2f1-2604-4aa9-b6b5-16e737b12506.png?v=1765309742"
+  },
+  {
+   "t": "Tablas de vidrio",
+   "h": "tablas-de-vidrio",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Tablas-de-vidrio-Meli-a.png?v=1765305296"
+  },
+  {
+   "t": "Barra escurridora 60 Black",
+   "h": "barra-escurridora-compacta-60",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS60BlackMelia.png?v=1765305138"
+  },
+  {
+   "t": "Barra escurridora compacta 50 Black",
+   "h": "barra-escurridora-compacta-50-black",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS50BlackMelia_9bb9fb26-e5ba-49a4-bd02-d4cabe67f369.png?v=1765565354"
+  },
+  {
+   "t": "Barra escurridora compacta 50",
+   "h": "barra-escurridora-compacta-50",
+   "l": "Accesorios",
+   "c": "accesorios",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS-50-Meli-a.png?v=1765304543"
+  },
+  {
+   "t": "Mesada 1.60 Doble",
+   "h": "mesada-1-60-doble",
+   "l": "Mesadas",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/MesadadobleMelib.png?v=1765293033"
+  },
+  {
+   "t": "Mesada 1.60 Simple",
+   "h": "mesada-1-60-simple",
+   "l": "Mesadas",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_6.png?v=1765291465"
+  },
+  {
+   "t": "Mesada 1.40 Doble",
+   "h": "mesada-1-40-doble",
+   "l": "Mesadas",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/MesadadobleMelib.png?v=1765293033"
+  },
+  {
+   "t": "Mesada 1.40 Simple",
+   "h": "mesada-1-40",
+   "l": "Mesadas",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_6.png?v=1765291465"
+  },
+  {
+   "t": "Mesada 1.20 Simple",
+   "h": "mesada-1-20",
+   "l": "Mesadas",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_6.png?v=1765291465"
+  },
+  {
+   "t": "Lavadero simple 421L",
+   "h": "lavadero-simple-421l",
+   "l": "",
+   "c": "lavadero",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/421LMelia.png?v=1764426652"
+  },
+  {
+   "t": "Lavadero simple 420L",
+   "h": "lavadero-simple-420l",
+   "l": "",
+   "c": "lavadero",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/420LMelia_cc478230-6e19-45f7-b5ce-71469301602f.png?v=1776780546"
+  },
+  {
+   "t": "Lavadero simple 421LE",
+   "h": "lavadero-simple-421le",
+   "l": "",
+   "c": "lavadero",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/421LEMelia_015b2407-134b-44b0-a5e3-7c84de8e2a11.png?v=1776780434"
+  },
+  {
+   "t": "Lavadero simple 420LE",
+   "h": "lavadero-simple-420le",
+   "l": "",
+   "c": "lavadero",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/420LEMelia.png?v=1764426488"
+  },
+  {
+   "t": "Económica doble 106EC",
+   "h": "economica-doble-106ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/106ECMelia.png?v=1764426437"
+  },
+  {
+   "t": "Económica doble 105EC",
+   "h": "economica-doble-105ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/105ECMelia.png?v=1764426379"
+  },
+  {
+   "t": "Económica doble 104P",
+   "h": "economica-doble-104p",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/104PMelia.png?v=1764426341"
+  },
+  {
+   "t": "Económica doble 104EC",
+   "h": "economica-doble-104ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/104ECMelia.png?v=1764426207"
+  },
+  {
+   "t": "Económica simple 103T",
+   "h": "economica-simple-103t",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/103TMelia.png?v=1764595166"
+  },
+  {
+   "t": "Económica simple 103P",
+   "h": "economica-simple-103p",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/103PMELIa.png?v=1764426133"
+  },
+  {
+   "t": "Económica simple 103EC",
+   "h": "economica-simple-103ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/103ECMELIa.png?v=1764425985"
+  },
+  {
+   "t": "Económica simple 143EC",
+   "h": "economica-simple-143ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/143ECMelia.png?v=1764425930"
+  },
+  {
+   "t": "Económica simple 102EC",
+   "h": "economica-simple-102ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/102ECMELIa.png?v=1764425878"
+  },
+  {
+   "t": "Económica simple 101EC",
+   "h": "economica-simple-101ec",
+   "l": "Línea Económica",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/101ECMELIa.png?v=1764425830"
+  },
+  {
+   "t": "Vesta esquinera 650",
+   "h": "vesta-esquinera-650",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/650Melid_d500c91e-983f-4e9e-8d74-b610b2842ffc.png?v=1764425420"
+  },
+  {
+   "t": "Vesta esquinera 350",
+   "h": "vesta-esquinera-350",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/350Melia.png?v=1764424052"
+  },
+  {
+   "t": "Vesta doble 409P",
+   "h": "vesta-doble-409p",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/409Melia.png?v=1764424013"
+  },
+  {
+   "t": "Vesta doble 408",
+   "h": "vesta-doble-408",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/408Melia_c31cdd4a-d3cd-4c97-a271-736fae4ec55a.png?v=1764423978"
+  },
+  {
+   "t": "Vesta doble 501",
+   "h": "vesta-doble-501",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/501Melia.png?v=1764423899"
+  },
+  {
+   "t": "Vesta doble 306",
+   "h": "vesta-doble-306",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/306Melia.png?v=1764423848"
+  },
+  {
+   "t": "Vesta doble 345",
+   "h": "vesta-doble-345",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/345Melia_5ace5fd7-7988-4f48-8145-887127814f6a.png?v=1764423802"
+  },
+  {
+   "t": "Vesta doble 305",
+   "h": "vesta-doble-305",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/305Melia_0c054b99-05e2-4f59-b112-ee946599cda3.png?v=1764423747"
+  },
+  {
+   "t": "Vesta doble 205",
+   "h": "vesta-doble-205",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/205MELIa_f4e425b9-12ef-4e23-a267-42bb75bc0cbf.png?v=1764423676"
+  },
+  {
+   "t": "Vesta doble 344",
+   "h": "vesta-doble-344",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/344Melia.png?v=1764565022"
+  },
+  {
+   "t": "Vesta doble 304",
+   "h": "vesta-doble-304",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/304Melia.png?v=1764423448"
+  },
+  {
+   "t": "Vesta doble 204",
+   "h": "vesta-doble-204",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/204Melic.png?v=1764423410"
+  },
+  {
+   "t": "Vesta simple 410P",
+   "h": "vesta-simple-410p",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/410PMelia_0be8a6ea-b25a-41f3-a2df-1961bed6424a.png?v=1764423498"
+  },
+  {
+   "t": "Vesta simple 410E",
+   "h": "vesta-simple-410e-1",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/410EMelia_61cfe0e5-bdf4-411f-b543-8340f8013e1d.png?v=1768413553"
+  },
+  {
+   "t": "Vesta simple 210",
+   "h": "vesta-simple-210",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/210Melia.png?v=1764423215"
+  },
+  {
+   "t": "Vesta simple 303",
+   "h": "vesta-simple-303",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/303Melia.png?v=1764423135"
+  },
+  {
+   "t": "Vesta simple 203",
+   "h": "vesta-simple-203",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/203Melia.png?v=1764267476"
+  },
+  {
+   "t": "Vesta simple 343",
+   "h": "vesta-simple-343",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/243Melia_c465ce28-9da7-4393-b7b5-0b6d428d3990.png?v=1764267330"
+  },
+  {
+   "t": "Vesta simple 243",
+   "h": "vesta-simple-243",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/243Melic.png?v=1764267291"
+  },
+  {
+   "t": "Vesta simple 202",
+   "h": "vesta-simple-202",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/202MELIa.png?v=1764267154"
+  },
+  {
+   "t": "Vesta simple 341",
+   "h": "vesta-simple-341",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_7.png?v=1765561304"
+  },
+  {
+   "t": "Vesta simple 301",
+   "h": "vesta-simple-301",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/301Melib_99f591e3-956e-448e-a0cf-55e659a2c829.png?v=1764267097"
+  },
+  {
+   "t": "Vesta simple 201",
+   "h": "vesta-simple-201",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/201Melia.png?v=1764266898"
+  },
+  {
+   "t": "Vesta simple 400",
+   "h": "vesta-simple-400",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/400Melia.png?v=1764266842"
+  },
+  {
+   "t": "Vesta triple 463E",
+   "h": "vesta-doble-463e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/463EMelic.png?v=1764266546"
+  },
+  {
+   "t": "Vesta doble 450E",
+   "h": "vesta-doble-450e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/450EMelia.png?v=1764266426"
+  },
+  {
+   "t": "Vesta doble 406E",
+   "h": "vesta-doble-406e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/406EMelia.png?v=1764266236"
+  },
+  {
+   "t": "Vesta doble 405E",
+   "h": "vesta-doble-405e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/405EMelic.png?v=1764266191"
+  },
+  {
+   "t": "Vesta doble 345E",
+   "h": "vesta-doble-345e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/345EMelia.png?v=1764426712"
+  },
+  {
+   "t": "Vesta doble 306E",
+   "h": "vesta-doble-306e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/306EMelia.png?v=1764265903"
+  },
+  {
+   "t": "Vesta doble 305E",
+   "h": "vesta-doble-305e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/305EMelia.png?v=1764265778"
+  },
+  {
+   "t": "Vesta simple 403E",
+   "h": "vesta-simple-403e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/403EMelia.png?v=1764265660"
+  },
+  {
+   "t": "Vesta simple 443E",
+   "h": "vesta-simple-443e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/443EMelia.png?v=1764443341"
+  },
+  {
+   "t": "Vesta simple 500E",
+   "h": "vesta-simple-500e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/500EMelia.png?v=1764443329"
+  },
+  {
+   "t": "Vesta simple 460E",
+   "h": "vesta-simple-460e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/460EMelia.png?v=1764265026"
+  },
+  {
+   "t": "Vesta simple 300E",
+   "h": "vesta-simple-300e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/300EMelia.png?v=1764443303"
+  },
+  {
+   "t": "Vesta simple 802E",
+   "h": "vesta-simple-802e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/802EMelia.png?v=1764443282"
+  },
+  {
+   "t": "Vesta simple 801E",
+   "h": "vesta-simple-801e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/801EMelia.png?v=1764443269"
+  },
+  {
+   "t": "Vesta simple 800E",
+   "h": "vesta-simple-800e",
+   "l": "Vesta",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/800EMelia.png?v=1764264726"
+  },
+  {
+   "t": "Designia doble 786",
+   "h": "designia-doble-786",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/786Melia.png?v=1764264670"
+  },
+  {
+   "t": "Designia simple 788",
+   "h": "designia-simple-788",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/788Melib.png?v=1764426809"
+  },
+  {
+   "t": "Designia simple 787",
+   "h": "designia-simple-787",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/787MELIa.png?v=1764264503"
+  },
+  {
+   "t": "Designia doble 786E",
+   "h": "designia-doble-786e",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/786EMelia.png?v=1764264441"
+  },
+  {
+   "t": "Designia simple 780E",
+   "h": "designia-simple-780e",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/780EMelia.png?v=1764264370"
+  },
+  {
+   "t": "Designia simple 783E",
+   "h": "designia-simple-783e",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/783EMelia.png?v=1764264298"
+  },
+  {
+   "t": "Desginia simple 782E",
+   "h": "desginia-simple-782e",
+   "l": "Designia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/782EMelia.png?v=1764264247"
+  },
+  {
+   "t": "Essentia doble 671B",
+   "h": "essentia-doble-671b",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-doble-671b.jpg?v=1787611594"
+  },
+  {
+   "t": "Essentia doble 671",
+   "h": "essentia-doble-671",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-doble-671.jpg?v=1787611403"
+  },
+  {
+   "t": "Essentia simple 670B",
+   "h": "essentia-simple-670b",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-670b.jpg?v=1787611098"
+  },
+  {
+   "t": "Essentia simple 670",
+   "h": "essentia-simple-670",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-670.jpg?v=1787610971"
+  },
+  {
+   "t": "Essentia simple 660B",
+   "h": "essentia-simple-660b",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-660b.jpg?v=1787610846"
+  },
+  {
+   "t": "Essentia simple 660",
+   "h": "essentia-simple-660",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-660.jpg?v=1787610688"
+  },
+  {
+   "t": "Essentia simple 640B",
+   "h": "essentia-simple-640b",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-640b.jpg?v=1787609993"
+  },
+  {
+   "t": "Essentia simple 640",
+   "h": "essentia-simple-640",
+   "l": "Essentia",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-640.jpg?v=1787609479"
+  },
+  {
+   "t": "Etna doble 746E",
+   "h": "etna-doble-746e",
+   "l": "Etna",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_5.png?v=1764962986"
+  },
+  {
+   "t": "Etna simple 718B",
+   "h": "etna-simple-718b",
+   "l": "Etna",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_4_8a32b464-7002-4277-ab2e-5588d6c32c11.png?v=1764962864"
+  },
+  {
+   "t": "Etna simple 718E",
+   "h": "etna-simple-718e",
+   "l": "Etna",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_3_84c5f3d1-7d5f-4124-9e2b-32669b0822fc.png?v=1764962842"
+  },
+  {
+   "t": "Etna simple 715E",
+   "h": "etna-simple-715e",
+   "l": "Etna",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_2.png?v=1764962677"
+  },
+  {
+   "t": "Etna simple 720E",
+   "h": "etna-simple-720e",
+   "l": "Etna",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Fotos_Etna_1.png?v=1764962508"
+  },
+  {
+   "t": "Etna simple 710E",
+   "h": "etna-simple-710e",
+   "l": "Etna",
+   "c": "cocina",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Fotos_Etna.png?v=1764962291"
+  },
+  {
+   "t": "Zíngara simple 946B",
+   "h": "zingara-simple-946b",
+   "l": "Zíngara",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/946BMelia.png?v=1764443376"
+  },
+  {
+   "t": "Zíngara simple 940G",
+   "h": "zingara-simple-940g",
+   "l": "Zíngara",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/940GMelia.png?v=1764443359"
+  },
+  {
+   "t": "Zíngara simple 940B",
+   "h": "zingara-simple-940b",
+   "l": "Zíngara",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/940BMelic.png?v=1764262955"
+  },
+  {
+   "t": "Zíngara simple 938G",
+   "h": "zingara-simple-938g",
+   "l": "Zíngara",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/938GMelib_cfe318cd-81e4-4394-87a7-c2d0e552be5e.png?v=1780067884"
+  },
+  {
+   "t": "Zíngara simple 938B",
+   "h": "zingara-simple-938b",
+   "l": "Zíngara",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/938BMelia.png?v=1764443207"
+  },
+  {
+   "t": "Nova simple 458",
+   "h": "nova-simple-458",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/458MELIb.png?v=1764562754"
+  },
+  {
+   "t": "Nova simple 457",
+   "h": "nova-simple-457",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/457Melia.png?v=1764161529"
+  },
+  {
+   "t": "Nova simple 456",
+   "h": "nova-simple-456",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/456Melia.png?v=1764161428"
+  },
+  {
+   "t": "Nova simple 455",
+   "h": "nova-simple-455",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/455Melia.png?v=1764161339"
+  },
+  {
+   "t": "Nova simple 454",
+   "h": "nova-simple-454",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/454MELIb.png?v=1764562593"
+  },
+  {
+   "t": "Nova simple 453E",
+   "h": "nova-simple-453e",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/453MELIa.png?v=1764160516"
+  },
+  {
+   "t": "Nova simple 452E",
+   "h": "nova-simple-452e",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/452EMELIa.png?v=1764116891"
+  },
+  {
+   "t": "Nova simple 451",
+   "h": "nova-simple-451",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/451Melib_8f5137b6-b3f9-490b-bb7c-5998becfd724.png?v=1764562325"
+  },
+  {
+   "t": "Nova simple 434E",
+   "h": "nova-simple-434e",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/434EMelia.png?v=1764116525"
+  },
+  {
+   "t": "Nova simple 340E",
+   "h": "nova-simple-340e",
+   "l": "Nova",
+   "c": "bano",
+   "img": "https://cdn.shopify.com/s/files/1/0948/1496/2028/files/340EMelia.png?v=1764116483"
+  }
+ ]
+}

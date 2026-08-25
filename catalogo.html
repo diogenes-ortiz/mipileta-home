@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Catálogo — Mi Pileta</title>
-<meta name="description" content="Catálogo de Mi Pileta: piletas de cocina Essentia, bachas de baño Zíngara y accesorios en acero inoxidable AISI 304." />
+<meta name="description" content="Catálogo completo de Mi Pileta: piletas de cocina, bachas de baño, lavaderos, piletones, accesorios y repuestos en acero inoxidable." />
 <meta name="robots" content="noindex,nofollow" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -495,14 +495,19 @@
   }
 </style>
 <style>
-  /* la pagina de productos arranca abajo de la barra, sin banner */
+  /* la página de productos arranca abajo de la barra, sin banner */
   .cat-page{padding-top:clamp(48px,7vw,80px);}
   .cat-page-head{max-width:720px;}
   .cat-page-head .title{margin-top:14px;}
   .cat-page-head .lead{margin-top:18px;}
   .cat-filtros--page{margin-top:34px;}
-  .cat-page .cat-grid{margin-top:26px;}
-  /* la entrada del menu en la que estamos parados */
+  .cat-cuenta{margin:20px 0 0;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#8b9198;}
+  .cat-page .cat-grid{margin-top:16px;}
+  /* OJO: acá las fotos son las oficiales de la tienda, que vienen sobre BLANCO.
+     Por eso la caja va clara, al revés que en la home, donde son renders sobre negro. */
+  .cat-page .prod-media{background:#fff;}
+  .cat-page .prod-media img{padding:6%;}
+  /* la entrada del menú en la que estamos parados */
   .topbar nav a.is-aca{opacity:1;position:relative;}
   .topbar nav a.is-aca::after{
     content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--warm);
@@ -582,141 +587,870 @@
   </div>
 </header>
 
-<!-- ============ CATÁLOGO (página propia) ============ -->
+<!-- ============ CATÁLOGO COMPLETO ============ -->
+<!-- Grilla generada por build-catalogo.js desde productos.json (la tienda real).
+     Las fotos las sirve el CDN de Shopify, no viven en el repo: si en la tienda
+     cambian una foto o agregan un producto, se corre traer-productos.js y listo. -->
 <section class="section cat-page">
   <div class="container">
     <div class="cat-page-head rv">
       <p class="eyebrow">Catálogo</p>
       <h1 class="title">Todos los <strong>productos</strong></h1>
-      <p class="lead">Piletas de cocina, bachas de baño y los accesorios que las completan.
-         Todo en acero inoxidable AISI&nbsp;304, con 10 años de garantía.</p>
+      <p class="lead">Piletas de cocina, bachas de baño, lavaderos, piletones y todo lo que
+         los acompaña. 120 productos en acero inoxidable, con 10 años de garantía.</p>
     </div>
 
     <div class="cat-filtros cat-filtros--page rv" role="group" aria-label="Filtrar por categoría">
-      <button class="cat-filtro on" data-f="todo" type="button">Todo</button>
-      <button class="cat-filtro" data-f="cocina" type="button">Cocina</button>
-      <button class="cat-filtro" data-f="bano" type="button">Baño</button>
-      <button class="cat-filtro" data-f="acc" type="button">Accesorios</button>
+        <button class="cat-filtro on" data-f="todo" type="button">Todo</button>
+        <button class="cat-filtro" data-f="cocina" type="button">Cocina</button>
+        <button class="cat-filtro" data-f="bano" type="button">Baño</button>
+        <button class="cat-filtro" data-f="lavadero" type="button">Lavadero</button>
+        <button class="cat-filtro" data-f="piletones" type="button">Piletones</button>
+        <button class="cat-filtro" data-f="accesorios" type="button">Accesorios</button>
+        <button class="cat-filtro" data-f="repuestos" type="button">Repuestos</button>
     </div>
 
+    <p class="cat-cuenta" id="cat-cuenta">120 productos</p>
+
     <div class="cat-grid" id="cat-grid">
-      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-640" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-640.jpg" alt="Essentia simple 640" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/desginia-simple-782e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/782EMelia.png?v=1764264247&width=600" alt="Desginia simple 782E" loading="lazy"></div>
         <div class="prod-body">
-          <b>Essentia simple 640</b>
-          <span>Simple · satinada</span>
+          <b>Desginia simple 782E</b>
+          <span>Designia</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-640b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-640B.jpg" alt="Essentia simple 640B" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/designia-doble-786" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/786Melia.png?v=1764264670&width=600" alt="Designia doble 786" loading="lazy"></div>
         <div class="prod-body">
-          <b>Essentia simple 640B</b>
-          <span>Simple · black PVD</span>
+          <b>Designia doble 786</b>
+          <span>Designia</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-660" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-660.jpg" alt="Essentia simple 660" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/designia-doble-786e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/786EMelia.png?v=1764264441&width=600" alt="Designia doble 786E" loading="lazy"></div>
         <div class="prod-body">
-          <b>Essentia simple 660</b>
-          <span>Simple · satinada</span>
+          <b>Designia doble 786E</b>
+          <span>Designia</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-660b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-660B.jpg" alt="Essentia simple 660B" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/designia-simple-780e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/780EMelia.png?v=1764264370&width=600" alt="Designia simple 780E" loading="lazy"></div>
         <div class="prod-body">
-          <b>Essentia simple 660B</b>
-          <span>Simple · black PVD</span>
+          <b>Designia simple 780E</b>
+          <span>Designia</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-670" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-670.jpg" alt="Essentia simple 670" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/designia-simple-783e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/783EMelia.png?v=1764264298&width=600" alt="Designia simple 783E" loading="lazy"></div>
         <div class="prod-body">
-          <b>Essentia simple 670</b>
-          <span>Simple · satinada</span>
+          <b>Designia simple 783E</b>
+          <span>Designia</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-670b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-670B.jpg" alt="Essentia simple 670B" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/designia-simple-787" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/787MELIa.png?v=1764264503&width=600" alt="Designia simple 787" loading="lazy"></div>
         <div class="prod-body">
-          <b>Essentia simple 670B</b>
-          <span>Simple · black PVD</span>
+          <b>Designia simple 787</b>
+          <span>Designia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/designia-simple-788" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/788Melib.png?v=1764426809&width=600" alt="Designia simple 788" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Designia simple 788</b>
+          <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-doble-671" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-671.jpg" alt="Essentia doble 671" loading="lazy"></div>
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-doble-671.jpg?v=1787611403&width=600" alt="Essentia doble 671" loading="lazy"></div>
         <div class="prod-body">
           <b>Essentia doble 671</b>
-          <span>Doble · satinada</span>
+          <span>Essentia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-doble-671b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/model-671B.jpg" alt="Essentia doble 671B" loading="lazy"></div>
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-doble-671b.jpg?v=1787611594&width=600" alt="Essentia doble 671B" loading="lazy"></div>
         <div class="prod-body">
           <b>Essentia doble 671B</b>
-          <span>Doble · black PVD</span>
+          <span>Essentia</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-938g" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/zingara-938G-cut.png" alt="Zíngara 938G" loading="lazy"></div>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-640" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-640.jpg?v=1787609479&width=600" alt="Essentia simple 640" loading="lazy"></div>
         <div class="prod-body">
-          <b>Zíngara 938G</b>
-          <span>Cuadrada · gold PVD</span>
+          <b>Essentia simple 640</b>
+          <span>Essentia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-640b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-640b.jpg?v=1787609993&width=600" alt="Essentia simple 640B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 640B</b>
+          <span>Essentia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-660" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-660.jpg?v=1787610688&width=600" alt="Essentia simple 660" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 660</b>
+          <span>Essentia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-660b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-660b.jpg?v=1787610846&width=600" alt="Essentia simple 660B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 660B</b>
+          <span>Essentia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-670" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-670.jpg?v=1787610971&width=600" alt="Essentia simple 670" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 670</b>
+          <span>Essentia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/essentia-simple-670b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1-essentia-simple-670b.jpg?v=1787611098&width=600" alt="Essentia simple 670B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Essentia simple 670B</b>
+          <span>Essentia</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/etna-doble-746e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_5.png?v=1764962986&width=600" alt="Etna doble 746E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Etna doble 746E</b>
+          <span>Etna</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/etna-simple-710e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Fotos_Etna.png?v=1764962291&width=600" alt="Etna simple 710E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Etna simple 710E</b>
+          <span>Etna</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/etna-simple-715e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_2.png?v=1764962677&width=600" alt="Etna simple 715E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Etna simple 715E</b>
+          <span>Etna</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/etna-simple-718b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_4_8a32b464-7002-4277-ab2e-5588d6c32c11.png?v=1764962864&width=600" alt="Etna simple 718B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Etna simple 718B</b>
+          <span>Etna</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/etna-simple-718e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_3_84c5f3d1-7d5f-4124-9e2b-32669b0822fc.png?v=1764962842&width=600" alt="Etna simple 718E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Etna simple 718E</b>
+          <span>Etna</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/etna-simple-720e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Fotos_Etna_1.png?v=1764962508&width=600" alt="Etna simple 720E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Etna simple 720E</b>
+          <span>Etna</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-doble-104ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/104ECMelia.png?v=1764426207&width=600" alt="Económica doble 104EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica doble 104EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-doble-104p" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/104PMelia.png?v=1764426341&width=600" alt="Económica doble 104P" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica doble 104P</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-doble-105ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/105ECMelia.png?v=1764426379&width=600" alt="Económica doble 105EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica doble 105EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-doble-106ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/106ECMelia.png?v=1764426437&width=600" alt="Económica doble 106EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica doble 106EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-simple-101ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/101ECMELIa.png?v=1764425830&width=600" alt="Económica simple 101EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica simple 101EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-simple-102ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/102ECMELIa.png?v=1764425878&width=600" alt="Económica simple 102EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica simple 102EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-simple-103ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/103ECMELIa.png?v=1764425985&width=600" alt="Económica simple 103EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica simple 103EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-simple-103p" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/103PMELIa.png?v=1764426133&width=600" alt="Económica simple 103P" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica simple 103P</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-simple-103t" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/103TMelia.png?v=1764595166&width=600" alt="Económica simple 103T" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica simple 103T</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/economica-simple-143ec" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/143ECMelia.png?v=1764425930&width=600" alt="Económica simple 143EC" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Económica simple 143EC</b>
+          <span>Línea Económica</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/mesada-1-20" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_6.png?v=1765291465&width=600" alt="Mesada 1.20 Simple" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Mesada 1.20 Simple</b>
+          <span>Mesadas</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/mesada-1-40-doble" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/MesadadobleMelib.png?v=1765293033&width=600" alt="Mesada 1.40 Doble" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Mesada 1.40 Doble</b>
+          <span>Mesadas</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/mesada-1-40" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_6.png?v=1765291465&width=600" alt="Mesada 1.40 Simple" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Mesada 1.40 Simple</b>
+          <span>Mesadas</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/mesada-1-60-doble" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/MesadadobleMelib.png?v=1765293033&width=600" alt="Mesada 1.60 Doble" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Mesada 1.60 Doble</b>
+          <span>Mesadas</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/mesada-1-60-simple" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_6.png?v=1765291465&width=600" alt="Mesada 1.60 Simple" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Mesada 1.60 Simple</b>
+          <span>Mesadas</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-204" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/204Melic.png?v=1764423410&width=600" alt="Vesta doble 204" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 204</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-205" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/205MELIa_f4e425b9-12ef-4e23-a267-42bb75bc0cbf.png?v=1764423676&width=600" alt="Vesta doble 205" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 205</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-304" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/304Melia.png?v=1764423448&width=600" alt="Vesta doble 304" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 304</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-305" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/305Melia_0c054b99-05e2-4f59-b112-ee946599cda3.png?v=1764423747&width=600" alt="Vesta doble 305" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 305</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-305e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/305EMelia.png?v=1764265778&width=600" alt="Vesta doble 305E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 305E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-306" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/306Melia.png?v=1764423848&width=600" alt="Vesta doble 306" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 306</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-306e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/306EMelia.png?v=1764265903&width=600" alt="Vesta doble 306E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 306E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-344" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/344Melia.png?v=1764565022&width=600" alt="Vesta doble 344" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 344</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-345" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/345Melia_5ace5fd7-7988-4f48-8145-887127814f6a.png?v=1764423802&width=600" alt="Vesta doble 345" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 345</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-345e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/345EMelia.png?v=1764426712&width=600" alt="Vesta doble 345E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 345E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-405e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/405EMelic.png?v=1764266191&width=600" alt="Vesta doble 405E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 405E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-406e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/406EMelia.png?v=1764266236&width=600" alt="Vesta doble 406E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 406E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-408" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/408Melia_c31cdd4a-d3cd-4c97-a271-736fae4ec55a.png?v=1764423978&width=600" alt="Vesta doble 408" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 408</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-409p" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/409Melia.png?v=1764424013&width=600" alt="Vesta doble 409P" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 409P</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-450e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/450EMelia.png?v=1764266426&width=600" alt="Vesta doble 450E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 450E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-501" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/501Melia.png?v=1764423899&width=600" alt="Vesta doble 501" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta doble 501</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-esquinera-350" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/350Melia.png?v=1764424052&width=600" alt="Vesta esquinera 350" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta esquinera 350</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-esquinera-650" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/650Melid_d500c91e-983f-4e9e-8d74-b610b2842ffc.png?v=1764425420&width=600" alt="Vesta esquinera 650" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta esquinera 650</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-201" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/201Melia.png?v=1764266898&width=600" alt="Vesta simple 201" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 201</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-202" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/202MELIa.png?v=1764267154&width=600" alt="Vesta simple 202" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 202</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-203" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/203Melia.png?v=1764267476&width=600" alt="Vesta simple 203" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 203</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-210" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/210Melia.png?v=1764423215&width=600" alt="Vesta simple 210" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 210</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-243" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/243Melic.png?v=1764267291&width=600" alt="Vesta simple 243" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 243</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-300e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/300EMelia.png?v=1764443303&width=600" alt="Vesta simple 300E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 300E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-301" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/301Melib_99f591e3-956e-448e-a0cf-55e659a2c829.png?v=1764267097&width=600" alt="Vesta simple 301" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 301</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-302" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/302Melia.png?v=1765995580&width=600" alt="Vesta Simple 302" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta Simple 302</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-303" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/303Melia.png?v=1764423135&width=600" alt="Vesta simple 303" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 303</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-341" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/FotosEtna_7.png?v=1765561304&width=600" alt="Vesta simple 341" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 341</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-343" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/243Melia_c465ce28-9da7-4393-b7b5-0b6d428d3990.png?v=1764267330&width=600" alt="Vesta simple 343" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 343</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-400" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/400Melia.png?v=1764266842&width=600" alt="Vesta simple 400" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 400</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-403e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/403EMelia.png?v=1764265660&width=600" alt="Vesta simple 403E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 403E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-410" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/410Melia.png?v=1768413601&width=600" alt="Vesta simple 410" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 410</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-410e-1" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/410EMelia_61cfe0e5-bdf4-411f-b543-8340f8013e1d.png?v=1768413553&width=600" alt="Vesta simple 410E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 410E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-410p" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/410PMelia_0be8a6ea-b25a-41f3-a2df-1961bed6424a.png?v=1764423498&width=600" alt="Vesta simple 410P" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 410P</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-443e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/443EMelia.png?v=1764443341&width=600" alt="Vesta simple 443E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 443E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-460e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/460EMelia.png?v=1764265026&width=600" alt="Vesta simple 460E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 460E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-500e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/500EMelia.png?v=1764443329&width=600" alt="Vesta simple 500E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 500E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-800e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/800EMelia.png?v=1764264726&width=600" alt="Vesta simple 800E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 800E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-801e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/801EMelia.png?v=1764443269&width=600" alt="Vesta simple 801E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 801E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-simple-802e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/802EMelia.png?v=1764443282&width=600" alt="Vesta simple 802E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta simple 802E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="cocina" href="https://mipileta.com.ar/products/vesta-doble-463e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/463EMelic.png?v=1764266546&width=600" alt="Vesta triple 463E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Vesta triple 463E</b>
+          <span>Vesta</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-340e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/340EMelia.png?v=1764116483&width=600" alt="Nova simple 340E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 340E</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-434e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/434EMelia.png?v=1764116525&width=600" alt="Nova simple 434E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 434E</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-451" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/451Melib_8f5137b6-b3f9-490b-bb7c-5998becfd724.png?v=1764562325&width=600" alt="Nova simple 451" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 451</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-452e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/452EMELIa.png?v=1764116891&width=600" alt="Nova simple 452E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 452E</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-453e" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/453MELIa.png?v=1764160516&width=600" alt="Nova simple 453E" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 453E</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-454" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/454MELIb.png?v=1764562593&width=600" alt="Nova simple 454" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 454</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-455" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/455Melia.png?v=1764161339&width=600" alt="Nova simple 455" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 455</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-456" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/456Melia.png?v=1764161428&width=600" alt="Nova simple 456" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 456</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-457" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/457Melia.png?v=1764161529&width=600" alt="Nova simple 457" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 457</b>
+          <span>Nova</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/nova-simple-458" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/458MELIb.png?v=1764562754&width=600" alt="Nova simple 458" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Nova simple 458</b>
+          <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-938b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/zingara-938B-cut.png" alt="Zíngara 938B" loading="lazy"></div>
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/938BMelia.png?v=1764443207&width=600" alt="Zíngara simple 938B" loading="lazy"></div>
         <div class="prod-body">
-          <b>Zíngara 938B</b>
-          <span>Cuadrada · black PVD</span>
+          <b>Zíngara simple 938B</b>
+          <span>Zíngara</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-940g" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/zingara-940G-cut.png" alt="Zíngara 940G" loading="lazy"></div>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-938g" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/938GMelib_cfe318cd-81e4-4394-87a7-c2d0e552be5e.png?v=1780067884&width=600" alt="Zíngara simple 938G" loading="lazy"></div>
         <div class="prod-body">
-          <b>Zíngara 940G</b>
-          <span>Redonda · gold PVD</span>
+          <b>Zíngara simple 938G</b>
+          <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-940b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/zingara-940B-cut.png" alt="Zíngara 940B" loading="lazy"></div>
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/940BMelic.png?v=1764262955&width=600" alt="Zíngara simple 940B" loading="lazy"></div>
         <div class="prod-body">
-          <b>Zíngara 940B</b>
-          <span>Redonda · black PVD</span>
+          <b>Zíngara simple 940B</b>
+          <span>Zíngara</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/box-inox" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/acc-box-inox.png" alt="Box Inox" loading="lazy"></div>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-940g" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/940GMelia.png?v=1764443359&width=600" alt="Zíngara simple 940G" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara simple 940G</b>
+          <span>Zíngara</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-946b" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/946BMelia.png?v=1764443376&width=600" alt="Zíngara simple 946B" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara simple 946B</b>
+          <span>Zíngara</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="lavadero" href="https://mipileta.com.ar/products/lavadero-simple-420l" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/420LMelia_cc478230-6e19-45f7-b5ce-71469301602f.png?v=1776780546&width=600" alt="Lavadero simple 420L" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Lavadero simple 420L</b>
+          <span></span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="lavadero" href="https://mipileta.com.ar/products/lavadero-simple-420le" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/420LEMelia.png?v=1764426488&width=600" alt="Lavadero simple 420LE" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Lavadero simple 420LE</b>
+          <span></span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="lavadero" href="https://mipileta.com.ar/products/lavadero-simple-421l" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/421LMelia.png?v=1764426652&width=600" alt="Lavadero simple 421L" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Lavadero simple 421L</b>
+          <span></span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="lavadero" href="https://mipileta.com.ar/products/lavadero-simple-421le" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/421LEMelia_015b2407-134b-44b0-a5e3-7c84de8e2a11.png?v=1776780434&width=600" alt="Lavadero simple 421LE" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Lavadero simple 421LE</b>
+          <span></span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="piletones" href="https://mipileta.com.ar/products/piletones-simples" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/PiletonMelic.png?v=1765766683&width=600" alt="Piletones Simples" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Piletones Simples</b>
+          <span>Piletones</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/barra-escurridora-60" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS60Melia_f68c5f96-2179-44fc-946b-fe04f3e7934e.png?v=1765565650&width=600" alt="Barra escurridora 60" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Barra escurridora 60</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/barra-escurridora-compacta-60" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS60BlackMelia.png?v=1765305138&width=600" alt="Barra escurridora 60 Black" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Barra escurridora 60 Black</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/barra-escurridora-compacta-50" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS-50-Meli-a.png?v=1765304543&width=600" alt="Barra escurridora compacta 50" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Barra escurridora compacta 50</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/barra-escurridora-compacta-50-black" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/BS50BlackMelia_9bb9fb26-e5ba-49a4-bd02-d4cabe67f369.png?v=1765565354&width=600" alt="Barra escurridora compacta 50 Black" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Barra escurridora compacta 50 Black</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/box-inox" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Box-Inox-Meli-b-800x800.png?v=1765312345&width=600" alt="Box Inox" loading="lazy"></div>
         <div class="prod-body">
           <b>Box Inox</b>
-          <span>Organizador con escurridor y colador</span>
+          <span>Accesorios</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/rejilla-flexible" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/acc-rejilla-flex.png" alt="Rejilla flexible" loading="lazy"></div>
-        <div class="prod-body">
-          <b>Rejilla flexible</b>
-          <span>Enrollable, protege el fondo</span>
-        </div>
-      </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/cestos-escurridores" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/acc-cesto-esc.png" alt="Cestos escurridores" loading="lazy"></div>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/cestos-escurridores" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Cestos-conjunto-Meli-a-1.png?v=1765310700&width=600" alt="Cestos escurridores" loading="lazy"></div>
         <div class="prod-body">
           <b>Cestos escurridores</b>
-          <span>Acero satinado</span>
+          <span>Accesorios</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/cestos-escurridores" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/acc-cesto-esc-rose.png" alt="Cestos escurridores rose" loading="lazy"></div>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/dosificador-1000" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1000Melia_5f7fa2f1-2604-4aa9-b6b5-16e737b12506.png?v=1765309742&width=600" alt="Dosificador 1000" loading="lazy"></div>
         <div class="prod-body">
-          <b>Cestos escurridores rose</b>
-          <span>Terminación rose PVD</span>
+          <b>Dosificador 1000</b>
+          <span>Accesorios</span>
         </div>
       </a>
-      <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/tablas-de-vidrio" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/acc-tabla-vidrio.png" alt="Tablas de vidrio" loading="lazy"></div>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/dosificador-1000-black" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1000BMelia.png?v=1765309785&width=600" alt="Dosificador 1000 Black" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Dosificador 1000 Black</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/dosificador-1004" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/1004Melib.png?v=1765309406&width=600" alt="Dosificador 1004" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Dosificador 1004</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/rejilla-flexible" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/RejillaFlexibleMelid.png?v=1772800870&width=600" alt="Rejilla Flexible" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Rejilla Flexible</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/tablas-de-acero" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/MIPILETA.jpg?v=1780044166&width=600" alt="Tablas de acero" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Tablas de acero</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/tablas-de-madera" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Tabla-de-madera-meli-c-8020-150x150.png?v=1765314623&width=600" alt="Tablas de madera" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Tablas de madera</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="accesorios" href="https://mipileta.com.ar/products/tablas-de-vidrio" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Tablas-de-vidrio-Meli-a.png?v=1765305296&width=600" alt="Tablas de vidrio" loading="lazy"></div>
         <div class="prod-body">
           <b>Tablas de vidrio</b>
-          <span>Negra, para apoyar sobre la cuba</span>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/aro-doble" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Aro-simple-Meli-a.png?v=1765315970&width=600" alt="Aro Doble" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Aro Doble</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/aro-simple" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Aro-simple-Meli-a.png?v=1765315970&width=600" alt="Aro simple" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Aro simple</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9000-copia" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/accesorio_9000_mi_pileta.jpg?v=1765314963&width=600" alt="Cestillos 9000" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Cestillos 9000</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/desague-americano" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9006-con-desborde-Meli-a.png?v=1765314686&width=600" alt="Desagüe americano 9006" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Desagüe americano 9006</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/desague-americano-black-9006" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9006-con-desborde-black-Meli-b.png?v=1765314784&width=600" alt="Desagüe americano Black 9006" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Desagüe americano Black 9006</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9003" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/accesorio_9003_mi_pileta-1.jpg?v=1765314896&width=600" alt="Desagüe de una sola pieza 9003" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Desagüe de una sola pieza 9003</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9007" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9007-Meil-a.png?v=1765315455&width=600" alt="Desagüe de una sola pieza 9007" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Desagüe de una sola pieza 9007</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/desague-americano-sin-desborde-9006" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/9001-Meli-c-700x700.png?v=1765315378&width=600" alt="Desagüe línea económica 9001" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Desagüe línea económica 9001</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/grampas" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/Grampas-Meli-a.png?v=1765315852&width=600" alt="Grampas" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Grampas</b>
+          <span>Accesorios</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="repuestos" href="https://mipileta.com.ar/products/art-sifon" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="https://cdn.shopify.com/s/files/1/0948/1496/2028/files/accesorio_sifon_mi_pileta.jpg?v=1765315595&width=600" alt="ART. SIFÓN" loading="lazy"></div>
+        <div class="prod-body">
+          <b>ART. SIFÓN</b>
+          <span>Repuestos</span>
         </div>
       </a>
     </div>
@@ -940,4 +1674,18 @@
 })();
 </script>
 </body>
+<script>
+  (function(){
+    var cuenta = document.getElementById('cat-cuenta');
+    var prods = document.querySelectorAll('.prod');
+    if (!cuenta || !prods.length) return;
+    document.querySelectorAll('.cat-filtro').forEach(function(b){
+      b.addEventListener('click', function(){
+        var n = 0;
+        prods.forEach(function(p){ if (p.style.display !== 'none') n++; });
+        cuenta.textContent = n + (n === 1 ? ' producto' : ' productos');
+      });
+    });
+  })();
+</script>
 </html>
