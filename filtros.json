@@ -1,0 +1,1719 @@
+{
+ "grupos": [
+  {
+   "id": "linea",
+   "label": "Línea",
+   "valores": [
+    {
+     "v": "Essentia Collection",
+     "label": "Essentia"
+    },
+    {
+     "v": "Zíngara Collection",
+     "label": "Zíngara"
+    },
+    {
+     "v": "Etna Collection",
+     "label": "Etna"
+    },
+    {
+     "v": "Designia Collection",
+     "label": "Designia"
+    },
+    {
+     "v": "Vesta Collection",
+     "label": "Vesta"
+    },
+    {
+     "v": "Nova collection",
+     "label": "Nova"
+    },
+    {
+     "v": "Línea Económica",
+     "label": "Línea Económica"
+    },
+    {
+     "v": "Mesadas",
+     "label": "Mesadas"
+    }
+   ]
+  },
+  {
+   "id": "tipo",
+   "label": "Tipo",
+   "valores": [
+    {
+     "v": "Simple",
+     "label": "Simple"
+    },
+    {
+     "v": "Doble",
+     "label": "Doble"
+    },
+    {
+     "v": "Triple",
+     "label": "Triple"
+    },
+    {
+     "v": "Esquinera",
+     "label": "Esquinera"
+    }
+   ]
+  },
+  {
+   "id": "inst",
+   "label": "Instalación",
+   "valores": [
+    {
+     "v": "Bajo mesada",
+     "label": "Bajo mesada"
+    },
+    {
+     "v": "Sobre mesada",
+     "label": "Sobre mesada"
+    },
+    {
+     "v": "Enrasada",
+     "label": "Enrasada"
+    },
+    {
+     "v": "Apoyo",
+     "label": "Apoyo"
+    }
+   ]
+  },
+  {
+   "id": "acab",
+   "label": "Acabado",
+   "valores": [
+    {
+     "v": "Satinado",
+     "label": "Satinado"
+    },
+    {
+     "v": "Brillante",
+     "label": "Brillante"
+    },
+    {
+     "v": "Brillo opaco",
+     "label": "Brillo opaco"
+    },
+    {
+     "v": "Satinado grafito",
+     "label": "Satinado grafito"
+    },
+    {
+     "v": "Satinado opcional brillante",
+     "label": "Satinado opcional brillante"
+    },
+    {
+     "v": "Brillante opcional satinado",
+     "label": "Brillante opcional satinado"
+    }
+   ]
+  },
+  {
+   "id": "acero",
+   "label": "Acero",
+   "valores": [
+    {
+     "v": "304",
+     "label": "304"
+    },
+    {
+     "v": "430",
+     "label": "430"
+    }
+   ]
+  }
+ ],
+ "porProducto": {
+  "essentia-doble-671b": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado grafito"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-doble-671": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-simple-670b": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado grafito"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-simple-670": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-simple-660b": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado grafito"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-simple-660": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-simple-640b": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado grafito"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "essentia-simple-640": {
+   "linea": [
+    "Essentia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada",
+    "Sobre mesada",
+    "Enrasada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "zingara-simple-946b": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Apoyo"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "zingara-simple-940g": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Apoyo"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "zingara-simple-940b": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Apoyo"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "zingara-simple-938g": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Apoyo"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "zingara-simple-938b": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Apoyo"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "zingara-oval-rose": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "acab": [
+    "Satinado"
+   ]
+  },
+  "zingara-oval-black": {
+   "linea": [
+    "Zíngara Collection"
+   ],
+   "acab": [
+    "Satinado"
+   ]
+  },
+  "etna-doble-746e": {
+   "linea": [
+    "Etna Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "etna-simple-718b": {
+   "linea": [
+    "Etna Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "etna-simple-718e": {
+   "linea": [
+    "Etna Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "etna-simple-720e": {
+   "linea": [
+    "Etna Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "etna-simple-715e": {
+   "linea": [
+    "Etna Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "etna-simple-710e": {
+   "linea": [
+    "Etna Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "designia-simple-788": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "designia-simple-787": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "designia-doble-786": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "designia-doble-786e": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "designia-simple-783e": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "designia-simple-780e": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "desginia-simple-782e": {
+   "linea": [
+    "Designia Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-esquinera-650": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Esquinera"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante opcional satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-esquinera-350": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Esquinera"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante opcional satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-409p": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-408": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-501": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-306": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-345": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-305": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-205": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-344": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-304": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-204": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-410p": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-410e-1": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-210": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-303": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-203": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-343": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-243": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-202": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-341": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-301": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante opcional satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-201": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-400": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-463e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Triple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-450e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-406e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-405e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-345e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante opcional satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-306e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-doble-305e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-403e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-443e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-500e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-460e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-300e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-802e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-801e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-800e": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-302": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "vesta-simple-410": {
+   "linea": [
+    "Vesta Collection"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ]
+  },
+  "nova-simple-458": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Apoyo"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-457": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-456": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-455": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-454": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-453e": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-452e": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-451": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-434e": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante opcional satinado"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "nova-simple-340e": {
+   "linea": [
+    "Nova collection"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "economica-doble-106ec": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-doble-105ec": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-doble-104p": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-doble-104ec": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Doble"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-simple-103t": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-simple-103p": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-simple-103ec": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-simple-102ec": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "economica-simple-101ec": {
+   "linea": [
+    "Línea Económica"
+   ],
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Brillo opaco"
+   ],
+   "acero": [
+    "430"
+   ]
+  },
+  "mesada-1-40": {
+   "linea": [
+    "Mesadas"
+   ]
+  },
+  "mesada-1-40-doble": {
+   "linea": [
+    "Mesadas"
+   ]
+  },
+  "mesada-1-60-simple": {
+   "linea": [
+    "Mesadas"
+   ]
+  },
+  "mesada-1-60-doble": {
+   "linea": [
+    "Mesadas"
+   ]
+  },
+  "lavadero-simple-421l": {
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "lavadero-simple-420l": {
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Bajo mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "lavadero-simple-421le": {
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "lavadero-simple-420le": {
+   "tipo": [
+    "Simple"
+   ],
+   "inst": [
+    "Sobre mesada"
+   ],
+   "acab": [
+    "Satinado opcional brillante"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "piletones-simples": {
+   "tipo": [
+    "Simple"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "tablas-de-acero": {
+   "inst": [
+    "Apoyo"
+   ],
+   "acero": [
+    "304"
+   ]
+  },
+  "tablas-de-vidrio": {
+   "acero": [
+    "304"
+   ]
+  },
+  "cestos-escurridores": {
+   "acero": [
+    "304"
+   ]
+  }
+ }
+}

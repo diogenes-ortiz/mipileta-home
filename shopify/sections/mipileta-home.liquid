@@ -541,7 +541,7 @@
     <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     <nav id="topnav">
       <a href="#calidad">Calidad</a>
-      <a href="catalogo.html">Productos</a>
+      <a href="{{ section.settings.catalogo_url | default: '/collections/todos-los-productos' }}">Productos</a>
       <a href="#compra">Compra protegida</a>
       <a href="#inspileta">Inspileta</a>
       <a href="#contacto">Contacto</a>
@@ -586,7 +586,7 @@
 
     <div class="lineas-grid">
       <!-- ESSENTIA -->
-      <a class="linea rv" href="{{ section.settings.l1_url | default: 'https://diogenes-ortiz.github.io/essentia-mipileta/' }}">
+      <a class="linea rv" href="{{ section.settings.l1_url | default: 'https://mipileta.com.ar/essentia' }}">
         <div class="linea-media">
           <img src="{{ img_l1_img }}" alt="{{ section.settings.l1_name }}">
           <span class="linea-badge">{{ section.settings.l1_badge }}</span>
@@ -600,7 +600,7 @@
       </a>
 
       <!-- ZÍNGARA -->
-      <a class="linea rv" href="{{ section.settings.l2_url | default: 'https://diogenes-ortiz.github.io/zingara-mipileta/' }}">
+      <a class="linea rv" href="{{ section.settings.l2_url | default: 'https://mipileta.com.ar/zingara' }}">
         <div class="linea-media">
           <img src="{{ img_l2_img }}" alt="{{ section.settings.l2_name }}">
           <span class="linea-badge">{{ section.settings.l2_badge }}</span>
@@ -792,7 +792,7 @@
     </div>
 
     <div class="center cta-row rv" style="margin-top:36px;">
-      <a class="btn btn-metal" href="catalogo.html">Ver más productos</a>
+      <a class="btn btn-metal" href="{{ section.settings.catalogo_url | default: '/collections/todos-los-productos' }}">Ver más productos</a>
     </div>
   </div>
 </section>
@@ -1013,8 +1013,8 @@
       </div>
       <div>
         <h4>{{ section.settings.lineas_eyebrow }}</h4>
-        <a href="{{ section.settings.l1_url | default: 'https://diogenes-ortiz.github.io/essentia-mipileta/' }}">{{ section.settings.l1_name }} · {{ section.settings.l1_badge }}</a>
-        <a href="{{ section.settings.l2_url | default: 'https://diogenes-ortiz.github.io/zingara-mipileta/' }}">{{ section.settings.l2_name }} · {{ section.settings.l2_badge }}</a>
+        <a href="{{ section.settings.l1_url | default: 'https://mipileta.com.ar/essentia' }}">{{ section.settings.l1_name }} · {{ section.settings.l1_badge }}</a>
+        <a href="{{ section.settings.l2_url | default: 'https://mipileta.com.ar/zingara' }}">{{ section.settings.l2_name }} · {{ section.settings.l2_badge }}</a>
         <a href="{{ section.settings.l3_url | default: '/products/tablas-de-acero' }}">{{ section.settings.l3_name }}</a>
       </div>
       <div>
@@ -1280,6 +1280,12 @@
       "id": "nav_shop_label",
       "label": "Barra superior — texto del botón",
       "default": "Catálogo online"
+    },
+    {
+      "type": "url",
+      "id": "catalogo_url",
+      "label": "Link a la página de productos",
+      "info": "En GitHub apunta a catalogo.html; en Shopify, a la página o colección que corresponda."
     },
     {
       "type": "url",

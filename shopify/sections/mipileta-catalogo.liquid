@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Catálogo — Mi Pileta</title>
-<meta name="description" content="Catálogo completo de Mi Pileta: piletas de cocina, bachas de baño, lavaderos, piletones, accesorios y repuestos en acero inoxidable." />
-<meta name="robots" content="noindex,nofollow" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=Raleway:wght@200;300;400;700&display=swap" rel="stylesheet">
+{%- comment -%}
+  sections/mipileta-catalogo.liquid — el catálogo completo de Mi Pileta.
+  GENERADO por build-shopify-catalogo.js a partir de catalogo.html. No editar a
+  mano: los cambios se hacen en los scripts de Cloud y se vuelve a generar.
+  Las fotos recortadas viven en los assets del tema; las que no se recortaron
+  siguen viniendo del CDN de Shopify por URL absoluta.
+{%- endcomment -%}
 <style>
   :root{
     --vw:100vw;
@@ -132,7 +128,7 @@
     transition:opacity 1.5s ease;
   }
   .hero-slide.is-on{opacity:1;}
-  .hero-slide--1{background-image:url('assets/home-hero-acero.png');background-position:center 64%;}
+  .hero-slide--1{background-image:url('{{ 'home-hero-acero.png' | asset_url }}');background-position:center 64%;}
   .hero::after{
     content:"";position:absolute;inset:0;z-index:1;
     background:
@@ -556,66 +552,17 @@
   .cat-cierre h3{font-family:"Raleway",sans-serif;font-weight:200;font-size:clamp(1.4rem,2.6vw,2rem);}
   .cat-cierre p{margin:10px 0 0;color:var(--muted);font-weight:300;max-width:52ch;}
 </style>
-</head>
-<body>
-
-
-<!-- ================= GATE (traba con contraseña, igual que Essentia/Zíngara) ================= -->
-<div id="gate">
-  <img src="assets/mp-sintesis.png" alt="Mi Pileta" class="gate-logo">
-  <p class="gate-txt">Sitio privado — ingresá la contraseña</p>
-  <div class="gate-row">
-    <input id="gate-pass" type="password" placeholder="Contraseña" autocomplete="off">
-    <button id="gate-btn">Entrar</button>
-  </div>
-  <p id="gate-err"></p>
-</div>
-<style>
-  #gate{position:fixed;inset:0;z-index:9999;background:#000;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;
-    font-family:"Hanken Grotesk",system-ui,sans-serif;}
-  #gate .gate-logo{height:64px;width:auto;opacity:.92;margin-bottom:6px;}
-  #gate .gate-txt{color:#9a9a9a;font-weight:300;margin:0;letter-spacing:.02em;}
-  #gate .gate-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-  #gate input{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;
-    color:#fff;padding:12px 16px;font-family:inherit;font-size:1rem;outline:none;min-width:220px;}
-  #gate input:focus{border-color:rgba(255,255,255,.5);}
-  #gate button{background:linear-gradient(180deg,#565c66,#2a2e34);color:#f4f6f9;border:1px solid rgba(255,255,255,.16);
-    border-radius:10px;padding:12px 26px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;}
-  #gate #gate-err{color:#d85e5e;font-size:.85rem;min-height:1.1em;margin:0;font-weight:300;}
-</style>
-<script>
-  (function(){
-    var PASS = "mipileta2026";
-    var gate = document.getElementById("gate");
-    if(sessionStorage.getItem("mipileta_ok") === "1"){ gate.parentNode.removeChild(gate); return; }
-    document.documentElement.style.overflow = "hidden";
-    function abrir(){
-      sessionStorage.setItem("mipileta_ok","1");
-      document.documentElement.style.overflow = "";
-      gate.parentNode.removeChild(gate);
-    }
-    function tryPass(){
-      if(document.getElementById("gate-pass").value === PASS){ abrir(); }
-      else { document.getElementById("gate-err").textContent = "Contraseña incorrecta"; }
-    }
-    document.getElementById("gate-btn").addEventListener("click", tryPass);
-    document.getElementById("gate-pass").addEventListener("keydown", function(e){ if(e.key === "Enter") tryPass(); });
-    document.getElementById("gate-pass").focus();
-  })();
-</script>
-
 <!-- ============ NAV ============ -->
 <header class="topbar" id="topbar">
   <div class="container inner">
-    <a href="index.html" aria-label="Mi Pileta"><img class="logo" src="assets/logo-negro.png" alt="Mi Pileta"></a>
+    <a href="/" aria-label="Mi Pileta"><img class="logo" src="{{ 'logo-negro.png' | asset_url }}" alt="Mi Pileta"></a>
     <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     <nav id="topnav">
-      <a href="index.html#calidad">Calidad</a>
-      <a href="catalogo.html" aria-current="page" class="is-aca">Productos</a>
-      <a href="index.html#compra">Compra protegida</a>
-      <a href="index.html#inspileta">Inspileta</a>
-      <a href="index.html#contacto">Contacto</a>
+      <a href="/#calidad">Calidad</a>
+      <a href="{{ request.path }}" aria-current="page" class="is-aca">Productos</a>
+      <a href="/#compra">Compra protegida</a>
+      <a href="/#inspileta">Inspileta</a>
+      <a href="/#contacto">Contacto</a>
       <a class="nav-shop" href="https://mipileta.com.ar/collections/todos-los-productos" target="_blank" rel="noopener">Catálogo online</a>
     </nav>
   </div>
@@ -766,49 +713,49 @@
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-acab="Satinado" href="https://mipileta.com.ar/zingara" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-ovalb.png" alt="Zíngara Oval Black" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-ovalb.png' | asset_url }}" alt="Zíngara Oval Black" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara Oval Black</b>
           <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-acab="Satinado" href="https://mipileta.com.ar/zingara" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-ovalr.png" alt="Zíngara Oval Rose" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-ovalr.png' | asset_url }}" alt="Zíngara Oval Rose" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara Oval Rose</b>
           <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-tipo="Simple" data-inst="Apoyo" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/zingara-simple-938b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-938b.png" alt="Zíngara simple 938B" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-938b.png' | asset_url }}" alt="Zíngara simple 938B" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara simple 938B</b>
           <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-tipo="Simple" data-inst="Apoyo" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/zingara-simple-938g" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-938g.png" alt="Zíngara simple 938G" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-938g.png' | asset_url }}" alt="Zíngara simple 938G" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara simple 938G</b>
           <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-tipo="Simple" data-inst="Apoyo" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/zingara-simple-940b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-940b.png" alt="Zíngara simple 940B" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-940b.png' | asset_url }}" alt="Zíngara simple 940B" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara simple 940B</b>
           <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-tipo="Simple" data-inst="Apoyo" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/zingara-simple-940g" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-940g.png" alt="Zíngara simple 940G" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-940g.png' | asset_url }}" alt="Zíngara simple 940G" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara simple 940G</b>
           <span>Zíngara</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Zíngara" data-tipo="Simple" data-inst="Apoyo" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/zingara-simple-946b" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-946b.png" alt="Zíngara simple 946B" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-zingara-946b.png' | asset_url }}" alt="Zíngara simple 946B" loading="lazy"></div>
         <div class="prod-body">
           <b>Zíngara simple 946B</b>
           <span>Zíngara</span>
@@ -857,343 +804,343 @@
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/desginia-simple-782e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desginia-simple-782e.png" alt="Desginia simple 782E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desginia-simple-782e.png' | asset_url }}" alt="Desginia simple 782E" loading="lazy"></div>
         <div class="prod-body">
           <b>Desginia simple 782E</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/designia-doble-786" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/designia-doble-786.png" alt="Designia doble 786" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-designia-doble-786.png' | asset_url }}" alt="Designia doble 786" loading="lazy"></div>
         <div class="prod-body">
           <b>Designia doble 786</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/designia-doble-786e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/designia-doble-786e.png" alt="Designia doble 786E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-designia-doble-786e.png' | asset_url }}" alt="Designia doble 786E" loading="lazy"></div>
         <div class="prod-body">
           <b>Designia doble 786E</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/designia-simple-780e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/designia-simple-780e.png" alt="Designia simple 780E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-designia-simple-780e.png' | asset_url }}" alt="Designia simple 780E" loading="lazy"></div>
         <div class="prod-body">
           <b>Designia simple 780E</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/designia-simple-783e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/designia-simple-783e.png" alt="Designia simple 783E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-designia-simple-783e.png' | asset_url }}" alt="Designia simple 783E" loading="lazy"></div>
         <div class="prod-body">
           <b>Designia simple 783E</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/designia-simple-787" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/designia-simple-787.png" alt="Designia simple 787" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-designia-simple-787.png' | asset_url }}" alt="Designia simple 787" loading="lazy"></div>
         <div class="prod-body">
           <b>Designia simple 787</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Designia" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/designia-simple-788" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/designia-simple-788.png" alt="Designia simple 788" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-designia-simple-788.png' | asset_url }}" alt="Designia simple 788" loading="lazy"></div>
         <div class="prod-body">
           <b>Designia simple 788</b>
           <span>Designia</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-doble-104ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-doble-104ec.png" alt="Económica doble 104EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-doble-104ec.png' | asset_url }}" alt="Económica doble 104EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica doble 104EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-doble-104p" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-doble-104p.png" alt="Económica doble 104P" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-doble-104p.png' | asset_url }}" alt="Económica doble 104P" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica doble 104P</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-doble-105ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-doble-105ec.png" alt="Económica doble 105EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-doble-105ec.png' | asset_url }}" alt="Económica doble 105EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica doble 105EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-doble-106ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-doble-106ec.png" alt="Económica doble 106EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-doble-106ec.png' | asset_url }}" alt="Económica doble 106EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica doble 106EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-simple-101ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-simple-101ec.png" alt="Económica simple 101EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-simple-101ec.png' | asset_url }}" alt="Económica simple 101EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica simple 101EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-simple-102ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-simple-102ec.png" alt="Económica simple 102EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-simple-102ec.png' | asset_url }}" alt="Económica simple 102EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica simple 102EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-simple-103ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-simple-103ec.png" alt="Económica simple 103EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-simple-103ec.png' | asset_url }}" alt="Económica simple 103EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica simple 103EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-simple-103p" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-simple-103p.png" alt="Económica simple 103P" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-simple-103p.png' | asset_url }}" alt="Económica simple 103P" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica simple 103P</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillo opaco" data-acero="430" href="https://mipileta.com.ar/products/economica-simple-103t" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-simple-103t.png" alt="Económica simple 103T" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-simple-103t.png' | asset_url }}" alt="Económica simple 103T" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica simple 103T</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Línea Económica" href="https://mipileta.com.ar/products/economica-simple-143ec" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/economica-simple-143ec.png" alt="Económica simple 143EC" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-economica-simple-143ec.png' | asset_url }}" alt="Económica simple 143EC" loading="lazy"></div>
         <div class="prod-body">
           <b>Económica simple 143EC</b>
           <span>Línea Económica</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Mesadas" href="https://mipileta.com.ar/products/mesada-1-20" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/mesada-1-20.png" alt="Mesada 1.20 Simple" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-mesada-1-20.png' | asset_url }}" alt="Mesada 1.20 Simple" loading="lazy"></div>
         <div class="prod-body">
           <b>Mesada 1.20 Simple</b>
           <span>Mesadas</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Mesadas" href="https://mipileta.com.ar/products/mesada-1-40-doble" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/mesada-1-40-doble.png" alt="Mesada 1.40 Doble" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-mesada-1-40-doble.png' | asset_url }}" alt="Mesada 1.40 Doble" loading="lazy"></div>
         <div class="prod-body">
           <b>Mesada 1.40 Doble</b>
           <span>Mesadas</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Mesadas" href="https://mipileta.com.ar/products/mesada-1-40" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/mesada-1-40.png" alt="Mesada 1.40 Simple" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-mesada-1-40.png' | asset_url }}" alt="Mesada 1.40 Simple" loading="lazy"></div>
         <div class="prod-body">
           <b>Mesada 1.40 Simple</b>
           <span>Mesadas</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Mesadas" href="https://mipileta.com.ar/products/mesada-1-60-doble" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/mesada-1-60-doble.png" alt="Mesada 1.60 Doble" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-mesada-1-60-doble.png' | asset_url }}" alt="Mesada 1.60 Doble" loading="lazy"></div>
         <div class="prod-body">
           <b>Mesada 1.60 Doble</b>
           <span>Mesadas</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Mesadas" href="https://mipileta.com.ar/products/mesada-1-60-simple" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/mesada-1-60-simple.png" alt="Mesada 1.60 Simple" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-mesada-1-60-simple.png' | asset_url }}" alt="Mesada 1.60 Simple" loading="lazy"></div>
         <div class="prod-body">
           <b>Mesada 1.60 Simple</b>
           <span>Mesadas</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-204" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-204.png" alt="Vesta doble 204" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-204.png' | asset_url }}" alt="Vesta doble 204" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 204</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-205" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-205.png" alt="Vesta doble 205" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-205.png' | asset_url }}" alt="Vesta doble 205" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 205</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-304" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-304.png" alt="Vesta doble 304" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-304.png' | asset_url }}" alt="Vesta doble 304" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 304</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-305" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-305.png" alt="Vesta doble 305" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-305.png' | asset_url }}" alt="Vesta doble 305" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 305</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-305e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-305e.png" alt="Vesta doble 305E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-305e.png' | asset_url }}" alt="Vesta doble 305E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 305E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-306" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-306.png" alt="Vesta doble 306" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-306.png' | asset_url }}" alt="Vesta doble 306" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 306</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-306e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-306e.png" alt="Vesta doble 306E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-306e.png' | asset_url }}" alt="Vesta doble 306E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 306E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-344" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-344.png" alt="Vesta doble 344" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-344.png' | asset_url }}" alt="Vesta doble 344" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 344</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-345" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-345.png" alt="Vesta doble 345" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-345.png' | asset_url }}" alt="Vesta doble 345" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 345</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Brillante opcional satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-345e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-345e.png" alt="Vesta doble 345E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-345e.png' | asset_url }}" alt="Vesta doble 345E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 345E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-405e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-405e.png" alt="Vesta doble 405E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-405e.png' | asset_url }}" alt="Vesta doble 405E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 405E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-406e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-406e.png" alt="Vesta doble 406E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-406e.png' | asset_url }}" alt="Vesta doble 406E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 406E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-408" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-408.png" alt="Vesta doble 408" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-408.png' | asset_url }}" alt="Vesta doble 408" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 408</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-409p" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-409p.png" alt="Vesta doble 409P" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-409p.png' | asset_url }}" alt="Vesta doble 409P" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 409P</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-450e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-450e.png" alt="Vesta doble 450E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-450e.png' | asset_url }}" alt="Vesta doble 450E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 450E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Doble" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-501" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-501.png" alt="Vesta doble 501" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-501.png' | asset_url }}" alt="Vesta doble 501" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta doble 501</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Esquinera" data-inst="Bajo mesada" data-acab="Brillante opcional satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-esquinera-350" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-esquinera-350.png" alt="Vesta esquinera 350" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-esquinera-350.png' | asset_url }}" alt="Vesta esquinera 350" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta esquinera 350</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Esquinera" data-inst="Bajo mesada" data-acab="Brillante opcional satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-esquinera-650" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-esquinera-650.png" alt="Vesta esquinera 650" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-esquinera-650.png' | asset_url }}" alt="Vesta esquinera 650" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta esquinera 650</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-201" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-201.png" alt="Vesta simple 201" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-201.png' | asset_url }}" alt="Vesta simple 201" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 201</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-202" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-202.png" alt="Vesta simple 202" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-202.png' | asset_url }}" alt="Vesta simple 202" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 202</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-203" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-203.png" alt="Vesta simple 203" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-203.png' | asset_url }}" alt="Vesta simple 203" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 203</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-210" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-210.png" alt="Vesta simple 210" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-210.png' | asset_url }}" alt="Vesta simple 210" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 210</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-243" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-243.png" alt="Vesta simple 243" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-243.png' | asset_url }}" alt="Vesta simple 243" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 243</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-300e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-300e.png" alt="Vesta simple 300E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-300e.png' | asset_url }}" alt="Vesta simple 300E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 300E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante opcional satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-301" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-301.png" alt="Vesta simple 301" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-301.png' | asset_url }}" alt="Vesta simple 301" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 301</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-302" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-302.png" alt="Vesta Simple 302" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-302.png' | asset_url }}" alt="Vesta Simple 302" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta Simple 302</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-303" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-303.png" alt="Vesta simple 303" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-303.png' | asset_url }}" alt="Vesta simple 303" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 303</b>
           <span>Vesta</span>
@@ -1207,231 +1154,231 @@
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-343" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-343.png" alt="Vesta simple 343" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-343.png' | asset_url }}" alt="Vesta simple 343" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 343</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-400" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-400.png" alt="Vesta simple 400" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-400.png' | asset_url }}" alt="Vesta simple 400" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 400</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-403e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-403e.png" alt="Vesta simple 403E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-403e.png' | asset_url }}" alt="Vesta simple 403E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 403E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-inst="Bajo mesada" data-acab="Brillante" href="https://mipileta.com.ar/products/vesta-simple-410" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-410.png" alt="Vesta simple 410" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-410.png' | asset_url }}" alt="Vesta simple 410" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 410</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-410e-1" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-410e-1.png" alt="Vesta simple 410E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-410e-1.png' | asset_url }}" alt="Vesta simple 410E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 410E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-410p" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-410p.png" alt="Vesta simple 410P" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-410p.png' | asset_url }}" alt="Vesta simple 410P" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 410P</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-443e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-443e.png" alt="Vesta simple 443E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-443e.png' | asset_url }}" alt="Vesta simple 443E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 443E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-460e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-460e.png" alt="Vesta simple 460E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-460e.png' | asset_url }}" alt="Vesta simple 460E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 460E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-500e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-500e.png" alt="Vesta simple 500E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-500e.png' | asset_url }}" alt="Vesta simple 500E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 500E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-800e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-800e.png" alt="Vesta simple 800E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-800e.png' | asset_url }}" alt="Vesta simple 800E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 800E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-801e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-801e.png" alt="Vesta simple 801E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-801e.png' | asset_url }}" alt="Vesta simple 801E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 801E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-simple-802e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-simple-802e.png" alt="Vesta simple 802E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-simple-802e.png' | asset_url }}" alt="Vesta simple 802E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta simple 802E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="cocina" data-linea="Vesta" data-tipo="Triple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/vesta-doble-463e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/vesta-doble-463e.png" alt="Vesta triple 463E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-vesta-doble-463e.png' | asset_url }}" alt="Vesta triple 463E" loading="lazy"></div>
         <div class="prod-body">
           <b>Vesta triple 463E</b>
           <span>Vesta</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-340e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-340e.png" alt="Nova simple 340E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-340e.png' | asset_url }}" alt="Nova simple 340E" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 340E</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Brillante opcional satinado" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-434e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-434e.png" alt="Nova simple 434E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-434e.png' | asset_url }}" alt="Nova simple 434E" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 434E</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-451" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-451.png" alt="Nova simple 451" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-451.png' | asset_url }}" alt="Nova simple 451" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 451</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-452e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-452e.png" alt="Nova simple 452E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-452e.png' | asset_url }}" alt="Nova simple 452E" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 452E</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-453e" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-453e.png" alt="Nova simple 453E" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-453e.png' | asset_url }}" alt="Nova simple 453E" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 453E</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-454" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-454.png" alt="Nova simple 454" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-454.png' | asset_url }}" alt="Nova simple 454" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 454</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-455" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-455.png" alt="Nova simple 455" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-455.png' | asset_url }}" alt="Nova simple 455" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 455</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-456" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-456.png" alt="Nova simple 456" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-456.png' | asset_url }}" alt="Nova simple 456" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 456</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-457" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-457.png" alt="Nova simple 457" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-457.png' | asset_url }}" alt="Nova simple 457" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 457</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="bano" data-linea="Nova" data-tipo="Simple" data-inst="Apoyo" data-acab="Brillante" data-acero="304" href="https://mipileta.com.ar/products/nova-simple-458" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/nova-simple-458.png" alt="Nova simple 458" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-nova-simple-458.png' | asset_url }}" alt="Nova simple 458" loading="lazy"></div>
         <div class="prod-body">
           <b>Nova simple 458</b>
           <span>Nova</span>
         </div>
       </a>
       <a class="prod rv" data-cat="lavadero" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/lavadero-simple-420l" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/lavadero-simple-420l.png" alt="Lavadero simple 420L" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-lavadero-simple-420l.png' | asset_url }}" alt="Lavadero simple 420L" loading="lazy"></div>
         <div class="prod-body">
           <b>Lavadero simple 420L</b>
           <span></span>
         </div>
       </a>
       <a class="prod rv" data-cat="lavadero" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/lavadero-simple-420le" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/lavadero-simple-420le.png" alt="Lavadero simple 420LE" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-lavadero-simple-420le.png' | asset_url }}" alt="Lavadero simple 420LE" loading="lazy"></div>
         <div class="prod-body">
           <b>Lavadero simple 420LE</b>
           <span></span>
         </div>
       </a>
       <a class="prod rv" data-cat="lavadero" data-tipo="Simple" data-inst="Bajo mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/lavadero-simple-421l" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/lavadero-simple-421l.png" alt="Lavadero simple 421L" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-lavadero-simple-421l.png' | asset_url }}" alt="Lavadero simple 421L" loading="lazy"></div>
         <div class="prod-body">
           <b>Lavadero simple 421L</b>
           <span></span>
         </div>
       </a>
       <a class="prod rv" data-cat="lavadero" data-tipo="Simple" data-inst="Sobre mesada" data-acab="Satinado opcional brillante" data-acero="304" href="https://mipileta.com.ar/products/lavadero-simple-421le" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/lavadero-simple-421le.png" alt="Lavadero simple 421LE" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-lavadero-simple-421le.png' | asset_url }}" alt="Lavadero simple 421LE" loading="lazy"></div>
         <div class="prod-body">
           <b>Lavadero simple 421LE</b>
           <span></span>
         </div>
       </a>
       <a class="prod rv" data-cat="piletones" data-linea="Piletones" data-tipo="Simple" data-acero="304" href="https://mipileta.com.ar/products/piletones-simples" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/piletones-simples.png" alt="Piletones Simples" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-piletones-simples.png' | asset_url }}" alt="Piletones Simples" loading="lazy"></div>
         <div class="prod-body">
           <b>Piletones Simples</b>
           <span>Piletones</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/barra-escurridora-60" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/barra-escurridora-60.png" alt="Barra escurridora 60" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-barra-escurridora-60.png' | asset_url }}" alt="Barra escurridora 60" loading="lazy"></div>
         <div class="prod-body">
           <b>Barra escurridora 60</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/barra-escurridora-compacta-60" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/barra-escurridora-compacta-60.png" alt="Barra escurridora 60 Black" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-barra-escurridora-compacta-60.png' | asset_url }}" alt="Barra escurridora 60 Black" loading="lazy"></div>
         <div class="prod-body">
           <b>Barra escurridora 60 Black</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/barra-escurridora-compacta-50" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/barra-escurridora-compacta-50.png" alt="Barra escurridora compacta 50" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-barra-escurridora-compacta-50.png' | asset_url }}" alt="Barra escurridora compacta 50" loading="lazy"></div>
         <div class="prod-body">
           <b>Barra escurridora compacta 50</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/barra-escurridora-compacta-50-black" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/barra-escurridora-compacta-50-black.png" alt="Barra escurridora compacta 50 Black" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-barra-escurridora-compacta-50-black.png' | asset_url }}" alt="Barra escurridora compacta 50 Black" loading="lazy"></div>
         <div class="prod-body">
           <b>Barra escurridora compacta 50 Black</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/box-inox" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/box-inox.png" alt="Box Inox" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-box-inox.png' | asset_url }}" alt="Box Inox" loading="lazy"></div>
         <div class="prod-body">
           <b>Box Inox</b>
           <span>Accesorios</span>
@@ -1445,28 +1392,28 @@
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/dosificador-1000" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/dosificador-1000.png" alt="Dosificador 1000" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-dosificador-1000.png' | asset_url }}" alt="Dosificador 1000" loading="lazy"></div>
         <div class="prod-body">
           <b>Dosificador 1000</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/dosificador-1000-black" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/dosificador-1000-black.png" alt="Dosificador 1000 Black" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-dosificador-1000-black.png' | asset_url }}" alt="Dosificador 1000 Black" loading="lazy"></div>
         <div class="prod-body">
           <b>Dosificador 1000 Black</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/dosificador-1004" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/dosificador-1004.png" alt="Dosificador 1004" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-dosificador-1004.png' | asset_url }}" alt="Dosificador 1004" loading="lazy"></div>
         <div class="prod-body">
           <b>Dosificador 1004</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/rejilla-flexible" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/rejilla-flexible.png" alt="Rejilla Flexible" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-rejilla-flexible.png' | asset_url }}" alt="Rejilla Flexible" loading="lazy"></div>
         <div class="prod-body">
           <b>Rejilla Flexible</b>
           <span>Accesorios</span>
@@ -1480,84 +1427,84 @@
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" href="https://mipileta.com.ar/products/tablas-de-madera" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/tablas-de-madera.png" alt="Tablas de madera" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-tablas-de-madera.png' | asset_url }}" alt="Tablas de madera" loading="lazy"></div>
         <div class="prod-body">
           <b>Tablas de madera</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="accesorios" data-linea="Accesorios" data-acero="304" href="https://mipileta.com.ar/products/tablas-de-vidrio" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/tablas-de-vidrio.png" alt="Tablas de vidrio" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-tablas-de-vidrio.png' | asset_url }}" alt="Tablas de vidrio" loading="lazy"></div>
         <div class="prod-body">
           <b>Tablas de vidrio</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/aro-doble" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/aro-doble.png" alt="Aro Doble" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-aro-doble.png' | asset_url }}" alt="Aro Doble" loading="lazy"></div>
         <div class="prod-body">
           <b>Aro Doble</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/aro-simple" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/aro-simple.png" alt="Aro simple" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-aro-simple.png' | asset_url }}" alt="Aro simple" loading="lazy"></div>
         <div class="prod-body">
           <b>Aro simple</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9000-copia" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desague-de-una-sola-pieza-9000-copia.png" alt="Cestillos 9000" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desague-de-una-sola-pieza-9000-copia.png' | asset_url }}" alt="Cestillos 9000" loading="lazy"></div>
         <div class="prod-body">
           <b>Cestillos 9000</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/desague-americano" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desague-americano.png" alt="Desagüe americano 9006" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desague-americano.png' | asset_url }}" alt="Desagüe americano 9006" loading="lazy"></div>
         <div class="prod-body">
           <b>Desagüe americano 9006</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/desague-americano-black-9006" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desague-americano-black-9006.png" alt="Desagüe americano Black 9006" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desague-americano-black-9006.png' | asset_url }}" alt="Desagüe americano Black 9006" loading="lazy"></div>
         <div class="prod-body">
           <b>Desagüe americano Black 9006</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9003" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desague-de-una-sola-pieza-9003.png" alt="Desagüe de una sola pieza 9003" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desague-de-una-sola-pieza-9003.png' | asset_url }}" alt="Desagüe de una sola pieza 9003" loading="lazy"></div>
         <div class="prod-body">
           <b>Desagüe de una sola pieza 9003</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/desague-de-una-sola-pieza-9007" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desague-de-una-sola-pieza-9007.png" alt="Desagüe de una sola pieza 9007" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desague-de-una-sola-pieza-9007.png' | asset_url }}" alt="Desagüe de una sola pieza 9007" loading="lazy"></div>
         <div class="prod-body">
           <b>Desagüe de una sola pieza 9007</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/desague-americano-sin-desborde-9006" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/desague-americano-sin-desborde-9006.png" alt="Desagüe línea económica 9001" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-desague-americano-sin-desborde-9006.png' | asset_url }}" alt="Desagüe línea económica 9001" loading="lazy"></div>
         <div class="prod-body">
           <b>Desagüe línea económica 9001</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Accesorios" href="https://mipileta.com.ar/products/grampas" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/grampas.png" alt="Grampas" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-grampas.png' | asset_url }}" alt="Grampas" loading="lazy"></div>
         <div class="prod-body">
           <b>Grampas</b>
           <span>Accesorios</span>
         </div>
       </a>
       <a class="prod rv" data-cat="repuestos" data-linea="Repuestos" href="https://mipileta.com.ar/products/art-sifon" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat/art-sifon.png" alt="ART. SIFÓN" loading="lazy"></div>
+        <div class="prod-media"><img src="{{ 'cat-art-sifon.png' | asset_url }}" alt="ART. SIFÓN" loading="lazy"></div>
         <div class="prod-body">
           <b>ART. SIFÓN</b>
           <span>Repuestos</span>
@@ -1583,7 +1530,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <img src="assets/logo-blanco.png" alt="Mi Pileta">
+        <img src="{{ 'logo-blanco.png' | asset_url }}" alt="Mi Pileta">
         <p>Acero inoxidable para cocina y baño. Diseño y fabricación argentina,
            con 10 años de garantía.</p>
         <div class="social">
@@ -1631,7 +1578,9 @@
   <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4c-1.1-1.7-1.6-3.7-1.6-5.7C5.2 10 10 5.2 16 5.2S26.8 10 26.8 16 22 26.6 16 26.6zm5.9-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-.9-.8-1.6-1.9-1.8-2.2s0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6c-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
 </a>
 
+
 <script>
+
 (function(){
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1832,5 +1781,14 @@
       aplicar();
     });
   })();
+
 </script>
-</html>
+
+{% schema %}
+{
+  "name": "Catálogo Mi Pileta",
+  "tag": "section",
+  "class": "mipileta-catalogo",
+  "settings": []
+}
+{% endschema %}
