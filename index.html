@@ -188,9 +188,10 @@
     /* sobre negro plano el texto ya no necesita sombra */
     .hero h1{max-width:none;text-shadow:none;}
     .hero .sub{max-width:none;margin-top:12px;text-shadow:none;}
-    /* los dos botones a mitad y mitad: entran en una línea y quedan parejos */
-    .hero .cta-row{margin-top:24px;gap:10px;flex-wrap:nowrap;}
-    .hero .cta-row .btn{flex:1 1 0;min-width:0;text-align:center;padding:13px 10px;font-size:.85rem;}
+    /* uno abajo del otro y a todo el ancho: a mitad de ancho el texto queda
+       pegado a la curva de la pastilla y las dos se aprietan entre si */
+    .hero .cta-row{margin-top:26px;gap:11px;flex-direction:column;align-items:stretch;}
+    .hero .cta-row .btn{width:100%;text-align:center;padding:15px 20px;}
     .scroll-hint{display:none;}
   }
 
