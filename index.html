@@ -165,21 +165,32 @@
   }
   @keyframes hint{0%,100%{opacity:.25;height:30px}50%{opacity:.9;height:52px}}
   @media(max-width:760px){
-    /* en vertical la mesada vacía se pierde: encuadramos sobre la pileta y
-       el velo pasa a ser de arriba hacia abajo */
-    .hero{min-height:min(76svh,600px);}
-    /* en vertical entra poco ancho: encuadramos donde estan las manos y la tabla,
-       que es lo que le da vida, y no sobre la cuba vacia */
-    .hero-slide{background-position:center 60%;}
-    .hero::after{
-      background:
-        radial-gradient(58% 42% at 60% 58%,rgba(255,255,255,.12) 0%,transparent 66%),
-        radial-gradient(95% 85% at 60% 58%,transparent 34%,rgba(0,0,0,.62) 100%),
-        linear-gradient(180deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.42) 44%,rgba(0,0,0,.55) 100%);
+    /* La foto del banner es apaisada (16:9) y la pantalla del teléfono es vertical:
+       usada como fondo a pantalla completa se le recorta el 66% del ancho y queda
+       un primer plano de la cuba, sin la mesada, las manos ni el verde. Así que en
+       mobile la foto pasa a ser una banda con su propia forma —se ve casi entera— y
+       el texto baja al negro, que ya era el fondo del hero. No hay corte a la vista:
+       la foto se funde con el bloque de texto. */
+    .hero{display:block;min-height:0;background:var(--dark);}
+    .hero-slides{position:relative;aspect-ratio:5/4;overflow:hidden;transform:none;}
+    /* el zoom de entrada se muda a la foto, para que no se pase de la banda */
+    .hero-slide{background-position:center;transform:scale(1.06);
+      transition:transform 1.6s cubic-bezier(.22,.61,.36,1);}
+    .hero.on .hero-slide{transform:scale(1);}
+    .hero::after{display:none;}
+    .hero-slides::before{
+      content:"";position:absolute;inset:0;z-index:1;
+      background:linear-gradient(180deg,
+        rgba(0,0,0,.34) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,0) 58%,
+        rgba(12,13,15,.72) 86%,var(--dark) 100%);
     }
-    .hero-copy{padding-bottom:40px;}
-    .hero h1{max-width:none;}
-    .hero .sub{max-width:none;}
+    .hero-copy{padding:24px 0 38px;}
+    /* sobre negro plano el texto ya no necesita sombra */
+    .hero h1{max-width:none;text-shadow:none;}
+    .hero .sub{max-width:none;margin-top:12px;text-shadow:none;}
+    /* los dos botones a mitad y mitad: entran en una línea y quedan parejos */
+    .hero .cta-row{margin-top:24px;gap:10px;flex-wrap:nowrap;}
+    .hero .cta-row .btn{flex:1 1 0;min-width:0;text-align:center;padding:13px 10px;font-size:.85rem;}
     .scroll-hint{display:none;}
   }
 
@@ -755,6 +766,20 @@
           <span>Doble · black PVD</span>
         </div>
       </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/pages/zingara" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/cat-zingara-ovalr.png" alt="Zíngara Oval Rose" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara Oval Rose</b>
+          <span>Oval · rose PVD</span>
+        </div>
+      </a>
+      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/pages/zingara" target="_blank" rel="noopener">
+        <div class="prod-media"><img src="assets/cat-zingara-ovalb.png" alt="Zíngara Oval Black" loading="lazy"></div>
+        <div class="prod-body">
+          <b>Zíngara Oval Black</b>
+          <span>Oval · black PVD</span>
+        </div>
+      </a>
       <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/products/zingara-simple-938g" target="_blank" rel="noopener">
         <div class="prod-media"><img src="assets/cat-zingara-938g.png" alt="Zíngara 938G" loading="lazy"></div>
         <div class="prod-body">
@@ -788,20 +813,6 @@
         <div class="prod-body">
           <b>Zíngara 946B</b>
           <span>Rectangular · black PVD</span>
-        </div>
-      </a>
-      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/pages/zingara" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-ovalr.png" alt="Zíngara Oval Rose" loading="lazy"></div>
-        <div class="prod-body">
-          <b>Zíngara Oval Rose</b>
-          <span>Oval · rose PVD</span>
-        </div>
-      </a>
-      <a class="prod rv" data-cat="bano" href="https://mipileta.com.ar/pages/zingara" target="_blank" rel="noopener">
-        <div class="prod-media"><img src="assets/cat-zingara-ovalb.png" alt="Zíngara Oval Black" loading="lazy"></div>
-        <div class="prod-body">
-          <b>Zíngara Oval Black</b>
-          <span>Oval · black PVD</span>
         </div>
       </a>
       <a class="prod rv" data-cat="acc" href="https://mipileta.com.ar/products/box-inox" target="_blank" rel="noopener">
